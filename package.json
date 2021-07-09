@@ -1,0 +1,37 @@
+{
+  "name": "js-utils",
+  "version": "1.0.0",
+  "description": "日常用的 javaScript 函数库",
+  "main": "index.js",
+  "scripts": {
+    "build": "jsdoc -c jsdoc.json",
+    "serve": "gulp serve",
+    "dev": "gulp serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/have-not-BUG/js-utils.git"
+  },
+  "keywords": [
+    "js",
+    "utils",
+    "jsdoc"
+  ],
+  "author": "have-not-BUG",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/have-not-BUG/js-utils/issues"
+  },
+  "homepage": "https://github.com/have-not-BUG/js-utils#readme",
+  "dependencies": {
+    "cheerio": "^0.22.0"
+  },
+  "devDependencies": {
+    "docdash": "^1.2.0",
+    "jsdoc": "^3.6.4",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-jsdoc3": "^1.0.1"
+  }
+}
