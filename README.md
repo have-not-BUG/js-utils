@@ -10,7 +10,7 @@
 2、支持热更新(hot update) /实时更新(live update)
 
 # 三、使用方法
-1、使用`gulp serve`或者`npm run dev` 指令启动服务 （会在项目根目录生成docs目录）
+1、使用`gulp serve`或者`npm run dev` 指令启动服务 （会在项目根目录生成hotupdate目录）
 
 2、使用`npm run build` 打包项目（会在项目根目录生成docs目录）
 

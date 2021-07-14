@@ -12,6 +12,7 @@ var jsdoc = require('gulp-jsdoc3');
 /* Demo paths */
 var SRC_DIR_PATH = path.join(__dirname, 'src');
 var SRC_DIR_TEMPLATE_PATH = __dirname;
+// 会在该目录下生成热更新文件
 var SRC_DIR_DESTINATION_PATH = 'hotupdate';
 
 var srcFilePaths = ['src/**/*.js'].map(function (filePath) {
