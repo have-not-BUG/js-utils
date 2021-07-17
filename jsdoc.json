@@ -1,8 +1,9 @@
 {
   "source": {
     "include": [
-      "src/core",
+      "src/global",
       "src/class",
+      "src/test",
       "./README.md"
     ]
   },
@@ -27,7 +28,9 @@
   },
   "plugins": ["plugins/delFooter.js"],
   "docdash": {
+    "static": true,
     "search": true,
+    "sort": true,
     "collapse": true,
     "footer": "",
     "meta": {
