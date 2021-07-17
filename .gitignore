@@ -3,6 +3,7 @@ node_modules
 /dist
 /docs
 /hotupdate
+/npm
 
 # local env files
 .env.local

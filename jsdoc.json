@@ -3,7 +3,6 @@
     "include": [
       "src/global",
       "src/class",
-      "src/test",
       "./README.md"
     ]
   },

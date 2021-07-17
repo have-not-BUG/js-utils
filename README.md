@@ -12,8 +12,12 @@
 # 三、使用方法
 1、使用`gulp serve`或者`npm run dev` 指令启动服务 （会在项目根目录生成hotupdate目录）
 
-2、使用`npm run build` 打包项目（会在项目根目录生成docs目录）
+2、使用`npm run build:doc` 打包项目文档（会在项目根目录生成docs目录）
 
-# 四、待实现
-支持发布npm包
+3、使用`npm run build:npm` 打包项目npm文件（会在项目根目录生成npm目录）
+
+# 四、待完成
+1、支持在页面上直接调试代码
+2、发布npm包
+3、支持https://img.shields.io/
 
