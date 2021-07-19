@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Home - 函数工具库</title>
+    
+    <meta name="description" content="日常 JavaScript  函数工具库，方便查看" />
+    
+        <meta name="keywords" content="javaScript, utils, jsdoc" />
+        <meta name="keyword" content="javaScript, utils, jsdoc" />
+    
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h2><a href="https://github.com/have-not-BUG/js-utils" class="menu-item" id="website_link" >GitHub</a></h2><h3>Global</h3><ul><li><a href="global.html#formatCurrency">formatCurrency</a></li><li><a href="global.html#formatNumberZero">formatNumberZero</a></li><li><a href="global.html#getDaysInOneMonth">getDaysInOneMonth</a></li><li><a href="global.html#getNowDate">getNowDate</a></li><li><a href="global.html#getObjVal">getObjVal</a></li><li><a href="global.html#isInteger">isInteger</a></li><li><a href="global.html#lotteryRandom">lotteryRandom</a></li><li><a href="global.html#paramToObj">paramToObj</a></li><li><a href="global.html#scrollAnimation">scrollAnimation</a></li><li><a href="global.html#sequenceParam">sequenceParam</a></li><li><a href="global.html#toFixed">toFixed</a></li><li><a href="global.html#toUTF8">toUTF8</a></li></ul>
+</nav>
+
+<div id="main">
+    
+
+    
+
+
+
+    
+
+
+    <section class="package">
+        <h3> </h3>		
+    </section>
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    <section class="readme usertext">
+        <article><h1>js-utils-lc</h1>
+<h1>一、简介</h1>
+<p><img src="https://img.shields.io/npm/v/js-utils-lc" alt="https://www.npmjs.com/package/js-utils-lc">
+<img src="https://img.shields.io/github/languages/code-size/have-not-BUG/js-utils" alt="https://github.com/have-not-BUG/js-utils">
+<img src="https://img.shields.io/github/issues-raw/have-not-BUG/js-utils" alt="https://github.com/have-not-BUG/js-utils">
+<img src="https://img.shields.io/npm/dt/js-utils-lc" alt="https://www.npmjs.com/package/js-utils-lc">
+<img src="https://img.shields.io/github/license/have-not-BUG/js-utils" alt="https://github.com/have-not-BUG/js-utils">
+<img src="https://img.shields.io/badge/maintained%20with-rollup-cc00ff.svg" alt="https://github.com/have-not-BUG/js-utils"></p>
+<p>结合 <a href="https://github.com/imondo/js-utils">imondo/js-utils</a> 、 <a href="https://github.com/nhn/tui.jsdoc-template">nhn/tui.jsdoc-template</a> 及 <a href="https://gitee.com/null_639_5368/js-utils">null_639_5368/js-utils</a>
+实现的js工具库（常用函数）。</p>
+<h1>二、使用方法</h1>
+<p>0、查看文档</p>
+<p>js工具库（常用函数）的文档地址为：https://have-not-bug.github.io/js-utils
+(文档采用的是jsdoc+docdash主题。)
+看是否有适合自己的方法
+<img src="https://publicimage-1251317493.file.myqcloud.com/reportBug/202107191818355815.png" alt="文档界面"></p>
+<p>1、安装npm包</p>
+<p><code>npm i js-utils-lc</code></p>
+<p>2、引入并使用</p>
+<pre class="prettyprint source lang-javascript"><code>import {removeArrRepeat,getNowDate} from 'js-utils-lc'
+console.log('getNowDate',getNowDate())
+console.log('removeArrRepeat',removeArrRepeat([1,2,3,3,4,9,8,8]))
+</code></pre>
+<h1>三、该项目的功能</h1>
+<p>1、支持jsdoc注释自动生成文档（生成的文档可以很方便的查看源码）</p>
+<p>2、jsdoc注释修改支持热更新(hot update) /实时更新(live update)文档</p>
+<p>3、支持实时测试/查看各个函数的运行效果</p>
+<p>4、支持在该项目直接发布npm包(使用rollup打包)</p>
+<h1>四、如何维护该项目</h1>
+<p>1、使用<code>gulp serve</code>或者<code>npm run dev</code> 指令启动文档服务 （会在项目根目录生成hotupdate目录）</p>
+<p>2、使用<code>npm run build:doc</code> 打包项目文档（会在项目根目录生成docs目录）</p>
+<p>3、使用<code>npm run build:npmprod</code> 打包项目npm文件（会在项目根目录生成npm目录，npm/amd 为amd规范，npm/cjs 为CommonJs规范，npm/es 为ES Moudle规范）</p>
+<p>4、使用<code>npm run build:npmdev</code> 打包项目未压缩的npm文件（会在项目根目录生成npm目录）</p>
+<p>5、使用<code>npm run test:use</code> 通过nodemon调用未压缩的npm文件 <code>npm/cjs/index.js</code> ，可以编辑<code>npm/cjs/index.js</code>文件 实时测试/查看各个函数的运行效果</p>
+<h1>五、待完成</h1>
+<p><s>1、支持实时测试/查看各个函数的运行效果</s></p>
+<p><s>2、发布npm包</s></p>
+<p><s>3、支持https://img.shields.io/</s></p>
+<p>4、补充常用函数</p>
+<p><s>5、补充docs主页网址及截图</s></p></article>
+    </section>
+
+
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>
