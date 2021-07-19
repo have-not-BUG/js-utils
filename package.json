@@ -1,14 +1,21 @@
 {
-  "name": "js-utils",
-  "version": "1.0.0",
-  "description": "日常用的 javaScript 函数库",
-  "main": "index.js",
+  "name": "js-utils-lc",
+  "version": "0.0.1",
+  "private": false,
+  "description": "JavaScript工具函数库文档及npm管理",
+  "main": "npm/cjs/index.js",
+  "files": [
+    "npm"
+  ],
   "scripts": {
     "serve": "gulp serve",
     "dev": "gulp serve",
     "build:doc": "rimraf docs && jsdoc -c jsdoc.json",
-    "build:npm": "rimraf npm && rollup -c",
-    "rm": "rimraf npm && rimraf docs"
+    "build:npmdev": "rimraf npm && rollup -c -w --environment NODE_ENV:development",
+    "build:npmprod": "rimraf npm && rollup -c  --environment NODE_ENV:production",
+    "test:use": "rollup -c --environment NODE_ENV:development && nodemon npm/cjs/index.js",
+    "rm": "rimraf npm && rimraf docs",
+    "prepublishOnly": "npm version patch"
   },
   "repository": {
     "type": "git",
@@ -16,8 +23,11 @@
   },
   "keywords": [
     "js",
+    "js utils",
+    "JavaScript utils",
+    "utils jsdoc",
     "utils",
-    "jsdoc"
+    "jsdoc hotupdate liveupdate"
   ],
   "author": "have-not-BUG",
   "license": "ISC",
@@ -46,10 +56,13 @@
     "gulp-connect": "^5.0.0",
     "gulp-jsdoc3": "^1.0.1",
     "jsdoc": "^3.6.4",
+    "nodemon": "~2.0.12",
     "rimraf": "~3.0.2",
     "rollup": "~2.53.1",
     "rollup-plugin-commonjs": "~10.1.0",
     "rollup-plugin-json": "~4.0.0",
+    "rollup-plugin-livereload": "~2.0.5",
+    "rollup-plugin-serve": "~1.1.0",
     "rollup-plugin-terser": "~7.0.2"
   }
 }

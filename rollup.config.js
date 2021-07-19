@@ -8,8 +8,11 @@ import { terser } from 'rollup-plugin-terser';
 
 import { babel } from '@rollup/plugin-babel';
 
-// import serve from 'rollup-plugin-serve'
-// import livereload from 'rollup-plugin-livereload'
+import serve from 'rollup-plugin-serve'
+import livereload from 'rollup-plugin-livereload'
+
+const isDev = process.env.NODE_ENV === 'development';
+console.log('当前模式', process.env.NODE_ENV)
 
 export default {
     // input: 'src/index.js',
@@ -18,7 +21,7 @@ export default {
         {
             format: 'es',
             dir:'npm/es',
-            name:'zonst_utils',
+            name:'js_utils_lc',
             // format: 'amd',
             // dir:'amd',
             // file: 'out.js',
@@ -28,7 +31,7 @@ export default {
         {
             // format: 'es',
             // dir:'es',
-            name:'zonst_utils',
+            name:'js_utils_lc',
             format: 'amd',
             dir:'npm/amd',
             // file: 'out.js',
@@ -38,7 +41,7 @@ export default {
         {
             // format: 'es',
             // dir:'es',
-            name:'zonst_utils',
+            name:'js_utils_lc',
             format: 'cjs',
             dir:'npm/cjs',
             // file: 'out.js',
@@ -48,7 +51,7 @@ export default {
         // {
         //     // format: 'es',
         //     // dir:'es',
-        //     name:'zonst_utils',
+        //     name:'js_utils_lc',
         //     format: 'umd',
         //     dir:'npm/umd',
         //     // file: 'out.js',
@@ -66,8 +69,16 @@ export default {
             babelHelpers: 'runtime',
             exclude: 'node_modules/**'
     }),
-        terser(),
-    // uglify()
+        !isDev && terser(),
+    // // uglify()
+    // //
+    //     // 开发环境通过浏览器进行调试
+    //     isDev && serve({
+    //         // Multiple folders to serve from
+    //         contentBase: ['npm'],
+    //     }),
+    //     // 热重载配合serve一起使用
+    //     isDev && livereload('npm'),
     ],
     external:["@babel/runtime","core-js"]
 };
