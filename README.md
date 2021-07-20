@@ -2,9 +2,9 @@
 
 # 一、简介
 ![https://www.npmjs.com/package/js-utils-lc](https://img.shields.io/npm/v/js-utils-lc)
+![https://www.npmjs.com/package/js-utils-lc](https://img.shields.io/npm/dt/js-utils-lc)
 ![https://github.com/have-not-BUG/js-utils](https://img.shields.io/github/languages/code-size/have-not-BUG/js-utils)
 ![https://github.com/have-not-BUG/js-utils](https://img.shields.io/github/issues-raw/have-not-BUG/js-utils)
-![https://www.npmjs.com/package/js-utils-lc](https://img.shields.io/npm/dt/js-utils-lc)
 ![https://github.com/have-not-BUG/js-utils](https://img.shields.io/github/license/have-not-BUG/js-utils)
 ![https://github.com/have-not-BUG/js-utils](https://img.shields.io/badge/maintained%20with-rollup-cc00ff.svg)
 
@@ -12,8 +12,7 @@
 
 
 
-结合 [imondo/js-utils](https://github.com/imondo/js-utils) 、 [nhn/tui.jsdoc-template](https://github.com/nhn/tui.jsdoc-template) 及 [null_639_5368/js-utils](https://gitee.com/null_639_5368/js-utils)
-实现的js工具库（常用函数）。
+该npm内置了的一些常用的JavaScript函数工具库。
 
 
 
@@ -77,4 +76,13 @@ console.log('removeArrRepeat',removeArrRepeat([1,2,3,3,4,9,8,8]))
 4、补充常用函数
 
 ~~5、补充docs主页网址及截图~~
+
+# 六、参考资料
+1、[imondo/js-utils](https://github.com/imondo/js-utils) 
+ 
+2、[nhn/tui.jsdoc-template](https://github.com/nhn/tui.jsdoc-template) 
+ 
+3、[null_639_5368/js-utils](https://gitee.com/null_639_5368/js-utils)
+
+
 
