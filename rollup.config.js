@@ -49,6 +49,16 @@ export default {
 
         },
         // {
+        //     format: 'iife',
+        //     dir:'npm/iife',
+        //     name:'js_utils_lc',
+        //     // format: 'amd',
+        //     // dir:'amd',
+        //     // file: 'out.js',
+        //     // inlineDynamicImports: true
+        //
+        // },
+        // {
         //     // format: 'es',
         //     // dir:'es',
         //     name:'js_utils_lc',
