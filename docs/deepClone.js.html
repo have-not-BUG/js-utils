@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>formatNumberZero.js - 函数工具库</title>
+    <title>deepClone.js - 函数工具库</title>
     
     <meta name="description" content="日常 JavaScript  函数工具库，方便查看" />
     
@@ -40,7 +40,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">formatNumberZero.js</h1>
+    <h1 class="page-title">deepClone.js</h1>
     
 
     
@@ -50,21 +50,74 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * @description 生成小于 10 的数字前加 0
- * @param {String|Number} n 数字或字符串
- * @return {String}
- *
- * @example
- * formatNumberZero('1') => '01'
- * formatNumberZero(10) => '10'
- */
-function formatNumberZero(n) {
-  n = n.toString()
-  return n[1] ? n : '0' + n;
+            <pre class="prettyprint source linenums"><code>function judgeType(obj) {
+    // tostring会返回对应不同的标签的构造函数
+    const toString = Object.prototype.toString;
+    const map = {
+        '[object Boolean]': 'boolean',
+        '[object Number]': 'number',
+        '[object String]': 'string',
+        '[object Function]': 'function',
+        '[object Array]': 'array',
+        '[object Date]': 'date',
+        '[object RegExp]': 'regExp',
+        '[object Undefined]': 'undefined',
+        '[object Null]': 'null',
+        '[object Object]': 'object',
+    };
+    const Element=Element?Element:function Element () {
+
+    }
+    if (obj instanceof Element) {
+        return 'element';
+    }
+    return map[toString.call(obj)];
 }
 
-export default formatNumberZero;</code></pre>
+/**
+ * 深拷贝数据
+ * @param data  {{}|*} 待拷贝的数据
+ * @return {{}|*} 拷贝后的新数据
+ * @example const originData=[{name:'lc',age:18},[1,2,3]]
+ const clonedData=deepClone(originData)
+ clonedData[0].age=28
+ clonedData[1]=[9,9,6]
+ console.log("clonedData",clonedData)
+ console.log('originData',originData)
+ //  clonedData [ { name: 'lc', age: 28 }, [ 9, 9, 6 ] ]
+ //  originData [ { name: 'lc', age: 18 }, [ 1, 2, 3 ] ]
+ */
+
+function deepClone(data) {
+    const type = judgeType(data);
+    let obj;
+    if (type === 'array') {
+        obj = [];
+    } else if (type === 'object') {
+        obj = {};
+    } else {
+        // 不再具有下一层次
+        return data;
+    }
+    if (type === 'array') {
+        // eslint-disable-next-line
+        for (let i = 0, len = data.length; i &lt; len; i++) {
+            obj.push(deepClone(data[i]));
+        }
+    } else if (type === 'object') {
+        // 对原型上的方法也拷贝了....
+        // eslint-disable-next-line
+        for (const key in data) {
+            obj[key] = deepClone(data[key]);
+        }
+    }
+    return obj;
+}
+
+
+
+export default deepClone
+</code></pre>
         </article>
     </section>
 

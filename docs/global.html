@@ -35,7 +35,7 @@
     
     <input type="text" id="nav-search" placeholder="Search" />
     
-    <h2><a href="index.html">Home</a></h2><h2><a href="https://github.com/have-not-BUG/js-utils" class="menu-item" id="website_link" >GitHub</a></h2><h3>Global</h3><ul><li><a href="global.html#formatCurrency">formatCurrency</a></li><li><a href="global.html#formatNumberZero">formatNumberZero</a></li><li><a href="global.html#getDaysInOneMonth">getDaysInOneMonth</a></li><li><a href="global.html#getNowDate">getNowDate</a></li><li><a href="global.html#getObjVal">getObjVal</a></li><li><a href="global.html#isInteger">isInteger</a></li><li><a href="global.html#lotteryRandom">lotteryRandom</a></li><li><a href="global.html#paramToObj">paramToObj</a></li><li><a href="global.html#scrollAnimation">scrollAnimation</a></li><li><a href="global.html#sequenceParam">sequenceParam</a></li><li><a href="global.html#toFixed">toFixed</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h2><a href="https://github.com/have-not-BUG/js-utils" class="menu-item" id="website_link" >GitHub</a></h2><h3>Global</h3><ul><li><a href="global.html#deepClone">deepClone</a></li><li><a href="global.html#floatObj">floatObj</a></li><li><a href="global.html#formatCurrency">formatCurrency</a></li><li><a href="global.html#formatNumberZero">formatNumberZero</a></li><li><a href="global.html#getDaysInOneMonth">getDaysInOneMonth</a></li><li><a href="global.html#getNowDate">getNowDate</a></li><li><a href="global.html#getObjVal">getObjVal</a></li><li><a href="global.html#getSearchParam">getSearchParam</a></li><li><a href="global.html#isInteger">isInteger</a></li><li><a href="global.html#lotteryRandom">lotteryRandom</a></li><li><a href="global.html#paramToObj">paramToObj</a></li><li><a href="global.html#scrollAnimation">scrollAnimation</a></li><li><a href="global.html#sequenceParam">sequenceParam</a></li><li><a href="global.html#toFixed">toFixed</a></li></ul>
 </nav>
 
 <div id="main">
@@ -126,6 +126,292 @@
 
     
         <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="deepClone"><span class="type-signature"></span>deepClone<span class="signature">(data)</span><span class="type-signature"> &rarr; {Object|*}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="deepClone.js.html">deepClone.js</a>, <a href="deepClone.js.html#line39">line 39</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    深拷贝数据
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const originData=[{name:'lc',age:18},[1,2,3]]
+ const clonedData=deepClone(originData)
+ clonedData[0].age=28
+ clonedData[1]=[9,9,6]
+ console.log("clonedData",clonedData)
+ console.log('originData',originData)
+ //  clonedData [ { name: 'lc', age: 28 }, [ 9, 9, 6 ] ]
+ //  originData [ { name: 'lc', age: 18 }, [ 1, 2, 3 ] ]</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">待拷贝的数据</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    拷贝后的新数据
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">*</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="floatObj"><span class="type-signature"></span>floatObj<span class="signature">()</span><span class="type-signature"> &rarr; {Object}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="floatObj.js.html">floatObj.js</a>, <a href="floatObj.js.html#line6">line 6</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    浮点数的加减乘除，解决浮点数问题
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>console.log(floatObj().jia(0.1,0.2))  // 0.3</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
 
         
             
@@ -1051,6 +1337,189 @@
     <dd>
         
 <span class="param-type">any</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="getSearchParam"><span class="type-signature"></span>getSearchParam<span class="signature">(name, url)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="getSearchParam.js.html">getSearchParam.js</a>, <a href="getSearchParam.js.html#line13">line 13</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    获取查询字符串中某个字段的值
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>console.log(getSearchParam('id','https://h5.qq.com/matchrank/index.html?name=你好&amp;id=20180727'))
+ console.log(getSearchParam('name','https://h5.qq.com/matchrank/index.html?name=你好&amp;id=20180727'))// 20180727// 你好</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">查询字符串中的某个字段</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">网址(不填，则为当前网址)</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
 
 
     </dd>

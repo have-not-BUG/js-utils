@@ -12,6 +12,7 @@
   "scripts": {
     "serve": "gulp serve",
     "dev": "gulp serve",
+    "build": "npm run build:doc & npm run build:npmprod",
     "build:doc": "rimraf docs && jsdoc -c jsdoc.json",
     "build:npmdev": "rimraf npm && rollup -c -w --environment NODE_ENV:development",
     "build:npmprod": "rimraf npm && rollup -c  --environment NODE_ENV:production",

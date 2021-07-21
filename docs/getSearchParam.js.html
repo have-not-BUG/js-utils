@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>formatNumberZero.js - 函数工具库</title>
+    <title>getSearchParam.js - 函数工具库</title>
     
     <meta name="description" content="日常 JavaScript  函数工具库，方便查看" />
     
@@ -40,7 +40,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">formatNumberZero.js</h1>
+    <h1 class="page-title">getSearchParam.js</h1>
     
 
     
@@ -51,20 +51,34 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @description 生成小于 10 的数字前加 0
- * @param {String|Number} n 数字或字符串
- * @return {String}
- *
+ * 获取查询字符串中某个字段的值
+ * @param name {string} 查询字符串中的某个字段
+ * @param url {string} 网址(不填，则为当前网址)
+ * @return {string}
  * @example
- * formatNumberZero('1') => '01'
- * formatNumberZero(10) => '10'
+ * console.log(getSearchParam('id','https://h5.qq.com/matchrank/index.html?name=你好&amp;id=20180727'))
+ console.log(getSearchParam('name','https://h5.qq.com/matchrank/index.html?name=你好&amp;id=20180727'))
+ * // 20180727
+ * // 你好
+
  */
-function formatNumberZero(n) {
-  n = n.toString()
-  return n[1] ? n : '0' + n;
+function getSearchParam(name, url) {
+    var reg = new RegExp("(^|&amp;)".concat(name, "=([^&amp;]*)(&amp;|$)"), 'i');
+    if(url){
+        var index=url.indexOf('?');
+        url= index !==-1 ? url.substring(index):''
+    }
+    var r = url ? url.substr(1).match(reg) : window.location.search.substr(1).match(reg);
+    if (r !== null) {
+        return decodeURIComponent(r[2]);
+    }
+
+    return '';
 }
 
-export default formatNumberZero;</code></pre>
+
+export default getSearchParam
+</code></pre>
         </article>
     </section>
 
