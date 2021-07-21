@@ -57,7 +57,7 @@ console.log('removeArrRepeat',removeArrRepeat([1,2,3,3,4,9,8,8]))
 
 4、使用`npm run build:npmdev` 打包项目未压缩的npm文件（会在项目根目录生成npm目录）
 
-5、使用`npm run test:use` 通过nodemon调用未压缩的npm文件 `npm/cjs/index.js` ，可以编辑`npm/cjs/index.js`文件 实时测试/查看各个函数的运行效果
+5、使用`npm run test:use` 通过nodemon调用未压缩的npm文件 `npm/cjs/index.js` ，可以编辑`npm/cjs/index.js`文件 实时测试/调试各个函数的运行效果
 
 
 
@@ -67,7 +67,7 @@ console.log('removeArrRepeat',removeArrRepeat([1,2,3,3,4,9,8,8]))
 
 
 # 五、待完成
-~~1、支持实时测试/查看各个函数的运行效果~~
+1、支持方便地在浏览器控制台实时测试/调试各个函数的运行效果
 
 ~~2、发布npm包~~
 

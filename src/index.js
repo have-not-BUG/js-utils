@@ -11,6 +11,9 @@ export { default as paramToObj } from './global/paramToObj'
 export { default as scrollAnimation } from './global/scrollAnimation'
 export { default as sequenceParam } from './global/sequenceParam'
 export { default as toFixed } from './global/toFixed'
+export { default as floatObj } from './global/floatObj'
+export { default as deepClone } from './global/deepClone'
+export { default as getSearchParam } from './global/getSearchParam'
 // export { default as toUTF8 } from './global/toUTF8'
 
 // console.log('formatCurrency',formatCurrency(12.151,'$$',2))
