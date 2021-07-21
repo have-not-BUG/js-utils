@@ -1,6 +1,6 @@
 {
   "name": "js-utils-lc",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "private": false,
   "description": "JavaScript工具函数库文档及npm管理",
   "main": "npm/cjs/index.js",
