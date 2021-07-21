@@ -45,21 +45,28 @@ console.log('removeArrRepeat',removeArrRepeat([1,2,3,3,4,9,8,8]))
 
 3、支持实时测试/查看各个函数的运行效果
 
-4、支持在该项目直接发布npm包(使用rollup打包)
+4、支持在该项目直接发布npm包(使用rollup打包)，且该npm里的代码会自动将ES6+语法转换为ES5语法
 
 
 # 四、如何维护该项目
-1、使用`gulp serve`或者`npm run dev` 指令启动文档服务 （会在项目根目录生成hotupdate目录）
 
-2、使用`npm run build:doc` 打包项目文档（会在项目根目录生成docs目录）
+### （一） 一定用到的方法
+1、使用`gulp serve`或者`npm run dev` 指令启动文档服务 （支持热更新，会在项目根目录生成hotupdate目录）
 
-3、使用`npm run build:npmprod` 打包项目npm文件（会在项目根目录生成npm目录，npm/amd 为amd规范，npm/cjs 为CommonJs规范，npm/es 为ES Moudle规范）
+2、在`src/global`目录下新建 `方法名.js`的js文件，并在该js文件里面完成函数的编写及jsdoc注释并`export`出你的函数。
 
-4、使用`npm run build:npmdev` 打包项目未压缩的npm文件（会在项目根目录生成npm目录）
+3、使用`npm run build` 打包项目文档（会在项目根目录生成docs目录）及 已压缩的npm文件（会在项目根目录生成npm目录，npm/amd 为amd规范，npm/cjs 为CommonJs规范，npm/es 为ES Moudle规范）
 
-5、使用`npm run test:use` 通过nodemon调用未压缩的npm文件 `npm/cjs/index.js` ，可以编辑`npm/cjs/index.js`文件 实时测试/调试各个函数的运行效果
 
-6、使用`npm run build` 打包项目文档（会在项目根目录生成docs目录）及 打包项目npm文件
+
+### （二） 可能用到的方法
+1、使用`npm run build:doc` 打包项目文档（会在项目根目录生成docs目录）
+
+2、使用`npm run build:npmprod` 打包已压缩的npm文件 （会在项目根目录生成npm目录，npm/amd 为amd规范，npm/cjs 为CommonJs规范，npm/es 为ES Moudle规范）
+
+3、使用`npm run build:npmdev` 打包项目未压缩的npm文件（会在项目根目录生成npm目录）
+
+4、使用`npm run test:use` 通过`nodemon`调用未压缩的npm文件 `npm/cjs/index.js` ，可以编辑`npm/cjs/index.js`文件 实时测试/调试各个函数的运行效果
 
 
 
