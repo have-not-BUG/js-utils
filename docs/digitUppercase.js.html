@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>getNowDate.js - 函数工具库</title>
+    <title>digitUppercase.js - 函数工具库</title>
     
     <meta name="description" content="日常 JavaScript  函数工具库，方便查看" />
     
@@ -40,7 +40,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">getNowDate.js</h1>
+    <h1 class="page-title">digitUppercase.js</h1>
     
 
     
@@ -51,28 +51,47 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @description 获取当前日期
- * @param {String} seperator 连接字符 默认 -
- * @returns {String} 当前日期
+ * @description 人民币小写金额转换为大写
+ * @param {String/number} n 金额
+ * @return 大写金额
  * @example
- * getNowDate() => "2020-05-18"  
+ * digitUppercase(123456789)
+ * "壹亿贰仟叁佰肆拾伍万陆仟柒佰捌拾玖元整"
+ * digitUppercase(12.12)
+ * "壹拾贰元壹角贰分"
  */
-function getNowDate(seperator = "-") {
-  const showDate = new Date();
-  const year = showDate.getFullYear();
-  let month = showDate.getMonth() + 1;
-  var strDate = showDate.getDate();
-  if (month >= 1 &amp;&amp; month &lt;= 9) {
-    month = '0' + month;
-  }
-  if (strDate >= 0 &amp;&amp; strDate &lt;= 9) {
-    strDate = '0' + strDate;
-  }
-  const currentdate = year + seperator + month + seperator + strDate;
-  return currentdate;
+function digitUppercase(n){
+    const fraction = ['角', '分']
+    const digit = [
+        '零', '壹', '贰', '叁', '肆',
+        '伍', '陆', '柒', '捌', '玖'
+    ]
+    const unit = [
+        ['元', '万', '亿'],
+        ['', '拾', '佰', '仟']
+    ]
+    const head = n &lt; 0 ? '欠' : ''
+    n = Math.abs(n)
+    let s = ''
+    for (let i = 0; i &lt; fraction.length; i++) {
+        s += (digit[Math.floor(Math.floor(n * 1000 * 10 * Math.pow(10, i)) % (10 * 1000) / 1000)] + fraction[i]).replace(/零./, '')
+    }
+    s = s || '整'
+    n = Math.floor(n)
+    for (let i = 0; i &lt; unit[0].length &amp;&amp; n > 0; i++) {
+        let p = ''
+        for (let j = 0; j &lt; unit[1].length &amp;&amp; n > 0; j++) {
+            p = digit[n % 10] + unit[1][j] + p
+            n = Math.floor(n / 10)
+        }
+        s = p.replace(/(零.)*零$/, '').replace(/^$/, '零') + unit[0][i] + s
+    }
+    return head + s.replace(/(零.)*零元/, '元')
+        .replace(/(零.)+/g, '零')
+        .replace(/^整$/, '零元整')
 }
-
-export default getNowDate;</code></pre>
+export default digitUppercase
+</code></pre>
         </article>
     </section>
 

@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>getNowDate.js - 函数工具库</title>
+    <title>byteLength.js - 函数工具库</title>
     
     <meta name="description" content="日常 JavaScript  函数工具库，方便查看" />
     
@@ -40,7 +40,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">getNowDate.js</h1>
+    <h1 class="page-title">byteLength.js</h1>
     
 
     
@@ -51,28 +51,31 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @description 获取当前日期
- * @param {String} seperator 连接字符 默认 -
- * @returns {String} 当前日期
+ * @description 获取字节长度
+ * @param {string} str 输入字符串
+ * @returns {number} output 输出字节长度
  * @example
- * getNowDate() => "2020-05-18"  
+ * byteLength('123')
+ * 3
+ * byteLength('好')
+ * 3
+ * byteLength('a')
+ * 1
  */
-function getNowDate(seperator = "-") {
-  const showDate = new Date();
-  const year = showDate.getFullYear();
-  let month = showDate.getMonth() + 1;
-  var strDate = showDate.getDate();
-  if (month >= 1 &amp;&amp; month &lt;= 9) {
-    month = '0' + month;
-  }
-  if (strDate >= 0 &amp;&amp; strDate &lt;= 9) {
-    strDate = '0' + strDate;
-  }
-  const currentdate = year + seperator + month + seperator + strDate;
-  return currentdate;
+function byteLength(str) {
+    // returns the byte length of an utf8 string
+    let s = str.length
+    for (var i = str.length - 1; i >= 0; i--) {
+        const code = str.charCodeAt(i)
+        if (code > 0x7f &amp;&amp; code &lt;= 0x7ff) s++
+        else if (code > 0x7ff &amp;&amp; code &lt;= 0xffff) s += 2
+        if (code >= 0xDC00 &amp;&amp; code &lt;= 0xDFFF) i--
+    }
+    return s
 }
 
-export default getNowDate;</code></pre>
+export default byteLength
+</code></pre>
         </article>
     </section>
 

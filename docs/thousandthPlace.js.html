@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>getNowDate.js - 函数工具库</title>
+    <title>thousandthPlace.js - 函数工具库</title>
     
     <meta name="description" content="日常 JavaScript  函数工具库，方便查看" />
     
@@ -40,7 +40,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">getNowDate.js</h1>
+    <h1 class="page-title">thousandthPlace.js</h1>
     
 
     
@@ -51,28 +51,30 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @description 获取当前日期
- * @param {String} seperator 连接字符 默认 -
- * @returns {String} 当前日期
+ * @description 数字千分位分隔法
+ * @param {Number} value 需要分隔数字
+ * @returns {String} 返回千分位，分隔的字符串 如果传入的是字符串，直接返回该字符串
  * @example
- * getNowDate() => "2020-05-18"  
+ * thousandthPlace(123456.12)
+ * "123,456.12"
  */
-function getNowDate(seperator = "-") {
-  const showDate = new Date();
-  const year = showDate.getFullYear();
-  let month = showDate.getMonth() + 1;
-  var strDate = showDate.getDate();
-  if (month >= 1 &amp;&amp; month &lt;= 9) {
-    month = '0' + month;
-  }
-  if (strDate >= 0 &amp;&amp; strDate &lt;= 9) {
-    strDate = '0' + strDate;
-  }
-  const currentdate = year + seperator + month + seperator + strDate;
-  return currentdate;
+
+function thousandthPlace(value) {
+    if (typeof (value) === 'number') {
+        value = value.toString()
+        if (value.indexOf('.') > 0) {
+            const num = value.substring(0, value.indexOf('.'))
+            return num.replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,') + value.substring(value.indexOf('.'), value.length)
+        } else {
+            return value.replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,')
+        }
+    } else {
+        return value
+    }
 }
 
-export default getNowDate;</code></pre>
+export default thousandthPlace;
+</code></pre>
         </article>
     </section>
 
