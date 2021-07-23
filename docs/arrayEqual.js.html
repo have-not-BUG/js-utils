@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>getNowDate.js - 函数工具库</title>
+    <title>arrayEqual.js - 函数工具库</title>
     
     <meta name="description" content="日常 JavaScript  函数工具库，方便查看" />
     
@@ -40,7 +40,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">getNowDate.js</h1>
+    <h1 class="page-title">arrayEqual.js</h1>
     
 
     
@@ -51,28 +51,25 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @description 获取当前日期
- * @param {String} seperator 连接字符 默认 -
- * @returns {String} 当前日期
+ * @description 判断数组是否相等
+ * @param {Array} arr1 数组1
+ * @param {Array} arr2 数组2
+ * @return {Boolean}
  * @example
- * getNowDate() => "2020-05-18"  
+ * arrayEqual([1,2,3],[1,2,3])
+ * true
  */
-function getNowDate(seperator = "-") {
-  const showDate = new Date();
-  const year = showDate.getFullYear();
-  let month = showDate.getMonth() + 1;
-  var strDate = showDate.getDate();
-  if (month >= 1 &amp;&amp; month &lt;= 9) {
-    month = '0' + month;
-  }
-  if (strDate >= 0 &amp;&amp; strDate &lt;= 9) {
-    strDate = '0' + strDate;
-  }
-  const currentdate = year + seperator + month + seperator + strDate;
-  return currentdate;
+function arrayEqual(arr1, arr2) {
+    if (arr1 === arr2) return true
+    if (arr1.length !== arr2.length) return false
+    for (let i = 0; i &lt; arr1.length; ++i) {
+        if (arr1[i] !== arr2[i]) return false
+    }
+    return true
 }
 
-export default getNowDate;</code></pre>
+export default arrayEqual
+</code></pre>
         </article>
     </section>
 
