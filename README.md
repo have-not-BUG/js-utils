@@ -55,7 +55,9 @@ console.log('removeArrRepeat',removeArrRepeat([1,2,3,3,4,9,8,8]))
 
 2、在`src/global`目录下新建 `方法名.js`的js文件，并在该js文件里面完成函数的编写及jsdoc注释并`export`出你的函数。
 
-3、使用`npm run build` 打包项目文档（会在项目根目录生成docs目录）及 已压缩的npm文件（会在项目根目录生成npm目录，npm/amd 为amd规范，npm/cjs 为CommonJs规范，npm/es 为ES Moudle规范）
+3、在`src/index.js`文件中将上一步js文件编写的函数`export`一遍
+
+4、使用`npm run build` 打包项目文档（会在项目根目录生成docs目录）及 已压缩的npm文件（会在项目根目录生成npm目录，npm/amd 为amd规范，npm/cjs 为CommonJs规范，npm/es 为ES Moudle规范）
 
 
 

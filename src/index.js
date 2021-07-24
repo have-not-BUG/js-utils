@@ -14,6 +14,15 @@ export { default as toFixed } from './global/toFixed'
 export { default as floatObj } from './global/floatObj'
 export { default as deepClone } from './global/deepClone'
 export { default as getSearchParam } from './global/getSearchParam'
+export { default as arrayEqual } from './global/arrayEqual'
+export { default as browserInfo } from './global/browserInfo'
+export { byteLength } from './global/byteLength'
+export { default as debounce } from './global/debounce'
+export { default as digitUppercase } from './global/digitUppercase'
+export { default as formatTime } from './global/formatTime'
+export { default as thousandthPlace } from './global/thousandthPlace'
+export { default as throttle } from './global/throttle'
+
 // export { default as toUTF8 } from './global/toUTF8'
 
 // console.log('formatCurrency',formatCurrency(12.151,'$$',2))
