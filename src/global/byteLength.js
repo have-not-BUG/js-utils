@@ -10,7 +10,7 @@
  * byteLength('a')
  * 1
  */
-function byteLength(str) {
+export function byteLength(str) {
     // returns the byte length of an utf8 string
     let s = str.length
     for (var i = str.length - 1; i >= 0; i--) {
@@ -21,5 +21,3 @@ function byteLength(str) {
     }
     return s
 }
-
-export default byteLength
