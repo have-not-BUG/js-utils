@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>getObjVal.js - 函数工具库</title>
+    <title>byteLength.js - 函数工具库</title>
     
     <meta name="description" content="日常 JavaScript  函数工具库，方便查看" />
     
@@ -40,7 +40,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">getObjVal.js</h1>
+    <h1 class="page-title">byteLength.js</h1>
     
 
     
@@ -51,33 +51,28 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
-* @description 获取对象的属性值
-* @param {object} object 需要获取值的对象
-* @param {string} path 需要获取值的属性路径
-* @return {any} 任意值
-*
-* @example
-* const object = { 'a': { 'b': { 'c': 3 } } }
-* getObjVal(object, "a.b.c") => 3
-*/
-function getObjVal(object, path) {
-  const result = object == null ? undefined : getPath(object, path);
-  
-  function getPath(object, path) {
-    path = path.split(".");
-
-    let index = 0
-    const length = path.length
-
-    while (object != null &amp;&amp; index &lt; length) {
-      object = object[path[index++]]
+ * @description 获取字节长度
+ * @param {string} str 输入字符串
+ * @returns {number} output 输出字节长度
+ * @example
+ * byteLength('123')
+ * 3
+ * byteLength('好')
+ * 3
+ * byteLength('a')
+ * 1
+ */
+export function byteLength(str) {
+    // returns the byte length of an utf8 string
+    let s = str.length
+    for (var i = str.length - 1; i >= 0; i--) {
+        const code = str.charCodeAt(i)
+        if (code > 0x7f &amp;&amp; code &lt;= 0x7ff) s++
+        else if (code > 0x7ff &amp;&amp; code &lt;= 0xffff) s += 2
+        if (code >= 0xDC00 &amp;&amp; code &lt;= 0xDFFF) i--
     }
-    return (index &amp;&amp; index == length) ? object : undefined;
-  }
-  return result;
+    return s
 }
-
-export default getObjVal;
 </code></pre>
         </article>
     </section>

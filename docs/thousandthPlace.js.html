@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>getObjVal.js - 函数工具库</title>
+    <title>thousandthPlace.js - 函数工具库</title>
     
     <meta name="description" content="日常 JavaScript  函数工具库，方便查看" />
     
@@ -40,7 +40,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">getObjVal.js</h1>
+    <h1 class="page-title">thousandthPlace.js</h1>
     
 
     
@@ -51,33 +51,29 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
-* @description 获取对象的属性值
-* @param {object} object 需要获取值的对象
-* @param {string} path 需要获取值的属性路径
-* @return {any} 任意值
-*
-* @example
-* const object = { 'a': { 'b': { 'c': 3 } } }
-* getObjVal(object, "a.b.c") => 3
-*/
-function getObjVal(object, path) {
-  const result = object == null ? undefined : getPath(object, path);
-  
-  function getPath(object, path) {
-    path = path.split(".");
+ * @description 数字千分位分隔法
+ * @param {Number} value 需要分隔数字
+ * @returns {String} 返回千分位，分隔的字符串 如果传入的是字符串，直接返回该字符串
+ * @example
+ * thousandthPlace(123456.12)
+ * "123,456.12"
+ */
 
-    let index = 0
-    const length = path.length
-
-    while (object != null &amp;&amp; index &lt; length) {
-      object = object[path[index++]]
+function thousandthPlace(value) {
+    if (typeof (value) === 'number') {
+        value = value.toString()
+        if (value.indexOf('.') > 0) {
+            const num = value.substring(0, value.indexOf('.'))
+            return num.replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,') + value.substring(value.indexOf('.'), value.length)
+        } else {
+            return value.replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,')
+        }
+    } else {
+        return value
     }
-    return (index &amp;&amp; index == length) ? object : undefined;
-  }
-  return result;
 }
 
-export default getObjVal;
+export default thousandthPlace;
 </code></pre>
         </article>
     </section>

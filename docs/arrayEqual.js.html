@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>getObjVal.js - 函数工具库</title>
+    <title>arrayEqual.js - 函数工具库</title>
     
     <meta name="description" content="日常 JavaScript  函数工具库，方便查看" />
     
@@ -40,7 +40,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">getObjVal.js</h1>
+    <h1 class="page-title">arrayEqual.js</h1>
     
 
     
@@ -51,33 +51,24 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
-* @description 获取对象的属性值
-* @param {object} object 需要获取值的对象
-* @param {string} path 需要获取值的属性路径
-* @return {any} 任意值
-*
-* @example
-* const object = { 'a': { 'b': { 'c': 3 } } }
-* getObjVal(object, "a.b.c") => 3
-*/
-function getObjVal(object, path) {
-  const result = object == null ? undefined : getPath(object, path);
-  
-  function getPath(object, path) {
-    path = path.split(".");
-
-    let index = 0
-    const length = path.length
-
-    while (object != null &amp;&amp; index &lt; length) {
-      object = object[path[index++]]
+ * @description 判断数组是否相等
+ * @param {Array} arr1 数组1
+ * @param {Array} arr2 数组2
+ * @return {Boolean}
+ * @example
+ * arrayEqual([1,2,3],[1,2,3])
+ * true
+ */
+function arrayEqual(arr1, arr2) {
+    if (arr1 === arr2) return true
+    if (arr1.length !== arr2.length) return false
+    for (let i = 0; i &lt; arr1.length; ++i) {
+        if (arr1[i] !== arr2[i]) return false
     }
-    return (index &amp;&amp; index == length) ? object : undefined;
-  }
-  return result;
+    return true
 }
 
-export default getObjVal;
+export default arrayEqual
 </code></pre>
         </article>
     </section>

@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>getObjVal.js - 函数工具库</title>
+    <title>debounce.js - 函数工具库</title>
     
     <meta name="description" content="日常 JavaScript  函数工具库，方便查看" />
     
@@ -40,7 +40,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">getObjVal.js</h1>
+    <h1 class="page-title">debounce.js</h1>
     
 
     
@@ -51,33 +51,34 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
-* @description 获取对象的属性值
-* @param {object} object 需要获取值的对象
-* @param {string} path 需要获取值的属性路径
-* @return {any} 任意值
-*
-* @example
-* const object = { 'a': { 'b': { 'c': 3 } } }
-* getObjVal(object, "a.b.c") => 3
-*/
-function getObjVal(object, path) {
-  const result = object == null ? undefined : getPath(object, path);
-  
-  function getPath(object, path) {
-    path = path.split(".");
+ *@description 防抖
+ * @param {function} callback 回调函数
+ * @param {Number} time 延迟时间
+ * @returns {function(*=): void} 返回函数
+ * @example
+ * window.addEventListener('keyup',debounce(function(e){console.log(e);},500))
+ */
 
-    let index = 0
-    const length = path.length
-
-    while (object != null &amp;&amp; index &lt; length) {
-      object = object[path[index++]]
+function debounce(callback, time){
+    //定时器变量
+    let timeId = null;
+    //返回一个函数
+    return function(e){
+        //判断
+        if(timeId !== null){
+            //清空定时器
+            clearTimeout(timeId);
+        }
+        //启动定时器
+        timeId = setTimeout(() => {
+            //执行回调
+            callback.call(this, e);
+            //重置定时器变量
+            timeId = null;
+        }, time);
     }
-    return (index &amp;&amp; index == length) ? object : undefined;
-  }
-  return result;
 }
-
-export default getObjVal;
+export default debounce
 </code></pre>
         </article>
     </section>

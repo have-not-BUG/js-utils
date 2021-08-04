@@ -35,7 +35,7 @@
     
     <input type="text" id="nav-search" placeholder="Search" />
     
-    <h2><a href="index.html">Home</a></h2><h2><a href="https://github.com/have-not-BUG/js-utils" class="menu-item" id="website_link" >GitHub</a></h2><h3>Global</h3><ul><li><a href="global.html#deepClone">deepClone</a></li><li><a href="global.html#floatObj">floatObj</a></li><li><a href="global.html#formatCurrency">formatCurrency</a></li><li><a href="global.html#formatNumberZero">formatNumberZero</a></li><li><a href="global.html#getDaysInOneMonth">getDaysInOneMonth</a></li><li><a href="global.html#getNowDate">getNowDate</a></li><li><a href="global.html#getObjVal">getObjVal</a></li><li><a href="global.html#getSearchParam">getSearchParam</a></li><li><a href="global.html#isInteger">isInteger</a></li><li><a href="global.html#lotteryRandom">lotteryRandom</a></li><li><a href="global.html#paramToObj">paramToObj</a></li><li><a href="global.html#scrollAnimation">scrollAnimation</a></li><li><a href="global.html#sequenceParam">sequenceParam</a></li><li><a href="global.html#toFixed">toFixed</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h2><a href="https://github.com/have-not-BUG/js-utils" class="menu-item" id="website_link" >GitHub</a></h2><h3>Global</h3><ul><li><a href="global.html#arrayEqual">arrayEqual</a></li><li><a href="global.html#browserInfo">browserInfo</a></li><li><a href="global.html#byteLength">byteLength</a></li><li><a href="global.html#debounce">debounce</a></li><li><a href="global.html#deepClone">deepClone</a></li><li><a href="global.html#digitUppercase">digitUppercase</a></li><li><a href="global.html#floatObj">floatObj</a></li><li><a href="global.html#formatCurrency">formatCurrency</a></li><li><a href="global.html#formatNumberZero">formatNumberZero</a></li><li><a href="global.html#formatTime">formatTime</a></li><li><a href="global.html#getDaysInOneMonth">getDaysInOneMonth</a></li><li><a href="global.html#getNowDate">getNowDate</a></li><li><a href="global.html#getObjVal">getObjVal</a></li><li><a href="global.html#getSearchParam">getSearchParam</a></li><li><a href="global.html#isInteger">isInteger</a></li><li><a href="global.html#lotteryRandom">lotteryRandom</a></li><li><a href="global.html#paramToObj">paramToObj</a></li><li><a href="global.html#scrollAnimation">scrollAnimation</a></li><li><a href="global.html#sequenceParam">sequenceParam</a></li><li><a href="global.html#thousandthPlace">thousandthPlace</a></li><li><a href="global.html#throttle">throttle</a></li><li><a href="global.html#toFixed">toFixed</a></li></ul>
 </nav>
 
 <div id="main">
@@ -126,6 +126,658 @@
 
     
         <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="arrayEqual"><span class="type-signature"></span>arrayEqual<span class="signature">(arr1, arr2)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="arrayEqual.js.html">arrayEqual.js</a>, <a href="arrayEqual.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    判断数组是否相等
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>arrayEqual([1,2,3],[1,2,3])
+true</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>arr1</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">数组1</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>arr2</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">数组2</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="browserInfo"><span class="type-signature"></span>browserInfo<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="browserInfo.js.html">browserInfo.js</a>, <a href="browserInfo.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    获取到浏览器信息
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>browserInfo()
+"chrome 91.0.4472.164"</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    浏览器信息
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="byteLength"><span class="type-signature"></span>byteLength<span class="signature">(str)</span><span class="type-signature"> &rarr; {number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="byteLength.js.html">byteLength.js</a>, <a href="byteLength.js.html#line13">line 13</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    获取字节长度
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>byteLength('123')
+3
+byteLength('好')
+3
+byteLength('a')
+1</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">输入字符串</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    output 输出字节长度
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="debounce"><span class="type-signature"></span>debounce<span class="signature">(callback, time)</span><span class="type-signature"> &rarr; {function}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="debounce.js.html">debounce.js</a>, <a href="debounce.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    防抖
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>window.addEventListener('keyup',debounce(function(e){console.log(e);},500))</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">回调函数</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>time</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">延迟时间</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    返回函数
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">function</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
 
         
             
@@ -298,6 +950,160 @@
 
     </dd>
 </dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="digitUppercase"><span class="type-signature"></span>digitUppercase<span class="signature">(n)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="digitUppercase.js.html">digitUppercase.js</a>, <a href="digitUppercase.js.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    人民币小写金额转换为大写
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>digitUppercase(123456789)
+"壹亿贰仟叁佰肆拾伍万陆仟柒佰捌拾玖元整"
+digitUppercase(12.12)
+"壹拾贰元壹角贰分"</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>n</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String/number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">金额</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    大写金额
+</div>
+
+
 
     
 
@@ -711,7 +1517,8 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>formatNumberZero('1') => '01'formatNumberZero(10) => '10'</code></pre>
+    <pre class="prettyprint"><code>formatNumberZero('1') => '01'
+formatNumberZero(10) => '10'</code></pre>
 
 
 
@@ -794,6 +1601,199 @@
     <dd>
         
 <span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="formatTime"><span class="type-signature"></span>formatTime<span class="signature">(time, option)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="formatTime.js.html">formatTime.js</a>, <a href="formatTime.js.html#line21">line 21</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    与当前时间的间隔显示
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>formatTime(new Date())
+"刚刚"
+formatTime(new Date() - 60 * 2 * 1000)
+"2分钟前"
+formatTime(new Date() - 60 * 60 * 2 * 1000)
+"2小时前"
+formatTime(new Date() - 60 * 60 * 24 * 1 * 1000)
+"1天前"
+formatTime(new Date('2021-07-20 15:01') , '{y}-{m}-{d} {h}:{i}')
+"2021-07-20 15:01"
+formatTime(new Date('2021-07-20 15:01') , '{y}/{m}/{d} {h}-{i}')
+"2021/07/20 15-01"</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>time</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">时间 new Date()</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>option</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">需要输出的日期格式</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
 
 
     </dd>
@@ -1230,7 +2230,8 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>const object = { 'a': { 'b': { 'c': 3 } } }getObjVal(object, "a.b.c") => 3</code></pre>
+    <pre class="prettyprint"><code>const object = { 'a': { 'b': { 'c': 3 } } }
+getObjVal(object, "a.b.c") => 3</code></pre>
 
 
 
@@ -1417,7 +2418,9 @@
     <h5>Example</h5>
     
     <pre class="prettyprint"><code>console.log(getSearchParam('id','https://h5.qq.com/matchrank/index.html?name=你好&amp;id=20180727'))
- console.log(getSearchParam('name','https://h5.qq.com/matchrank/index.html?name=你好&amp;id=20180727'))// 20180727// 你好</code></pre>
+ console.log(getSearchParam('name','https://h5.qq.com/matchrank/index.html?name=你好&amp;id=20180727'))
+// 20180727
+// 你好</code></pre>
 
 
 
@@ -1599,7 +2602,12 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>isInteger(3) => trueisInteger(3.3) => falseisInteger('') => falseisInteger('3') => falseisInteger(true) => falseisInteger([]) => false</code></pre>
+    <pre class="prettyprint"><code>isInteger(3) => true
+isInteger(3.3) => false
+isInteger('') => false
+isInteger('3') => false
+isInteger(true) => false
+isInteger([]) => false</code></pre>
 
 
 
@@ -2373,6 +3381,356 @@
 
     
 
+    <h4 class="name" id="thousandthPlace"><span class="type-signature"></span>thousandthPlace<span class="signature">(value)</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="thousandthPlace.js.html">thousandthPlace.js</a>, <a href="thousandthPlace.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    数字千分位分隔法
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>thousandthPlace(123456.12)
+"123,456.12"</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">需要分隔数字</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    返回千分位，分隔的字符串 如果传入的是字符串，直接返回该字符串
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="throttle"><span class="type-signature"></span>throttle<span class="signature">(callback, wait)</span><span class="type-signature"> &rarr; {function}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="throttle.js.html">throttle.js</a>, <a href="throttle.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    节流
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>window.addEventListener('resize',throttle(function(e){console.log(e);},500))</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">回调函数</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>wait</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">等候时间</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    返回函数
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">function</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
     <h4 class="name" id="toFixed"><span class="type-signature"></span>toFixed<span class="signature">(value, num)</span><span class="type-signature"> &rarr; {String}</span></h4>
 
     
@@ -2438,7 +3796,8 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>toFixed(0.3358) => "0.34"  toFixed('0.3358') => "0.34"  </code></pre>
+    <pre class="prettyprint"><code>toFixed(0.3358) => "0.34"  
+toFixed('0.3358') => "0.34"  </code></pre>
 
 
 
