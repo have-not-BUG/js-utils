@@ -24,7 +24,7 @@
       "layoutFile": "plugins/layout.tmpl"
     }
   },
-  "plugins": ["plugins/delFooter.js"],
+  "plugins": ["plugins/delFooter.js","plugins/parseComplete.js"],
   "docdash": {
     "static": true,
     "search": true,

@@ -197,8 +197,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>arrayEqual([1,2,3],[1,2,3])
-true</code></pre>
+    <pre class="prettyprint"><code>arrayEqual([1,2,3],[1,2,3])true</code></pre>
 
 
 
@@ -380,8 +379,7 @@ true</code></pre>
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>browserInfo()
-"chrome 91.0.4472.164"</code></pre>
+    <pre class="prettyprint"><code>browserInfo()"chrome 91.0.4472.164"</code></pre>
 
 
 
@@ -495,12 +493,7 @@ true</code></pre>
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>byteLength('123')
-3
-byteLength('好')
-3
-byteLength('a')
-1</code></pre>
+    <pre class="prettyprint"><code>byteLength('123')3byteLength('好')3byteLength('a')1</code></pre>
 
 
 
@@ -1025,10 +1018,7 @@ byteLength('a')
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>digitUppercase(123456789)
-"壹亿贰仟叁佰肆拾伍万陆仟柒佰捌拾玖元整"
-digitUppercase(12.12)
-"壹拾贰元壹角贰分"</code></pre>
+    <pre class="prettyprint"><code>digitUppercase(123456789)"壹亿贰仟叁佰肆拾伍万陆仟柒佰捌拾玖元整"digitUppercase(12.12)"壹拾贰元壹角贰分"</code></pre>
 
 
 
@@ -1517,8 +1507,7 @@ digitUppercase(12.12)
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>formatNumberZero('1') => '01'
-formatNumberZero(10) => '10'</code></pre>
+    <pre class="prettyprint"><code>formatNumberZero('1') => '01'formatNumberZero(10) => '10'</code></pre>
 
 
 
@@ -1680,18 +1669,7 @@ formatNumberZero(10) => '10'</code></pre>
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>formatTime(new Date())
-"刚刚"
-formatTime(new Date() - 60 * 2 * 1000)
-"2分钟前"
-formatTime(new Date() - 60 * 60 * 2 * 1000)
-"2小时前"
-formatTime(new Date() - 60 * 60 * 24 * 1 * 1000)
-"1天前"
-formatTime(new Date('2021-07-20 15:01') , '{y}-{m}-{d} {h}:{i}')
-"2021-07-20 15:01"
-formatTime(new Date('2021-07-20 15:01') , '{y}/{m}/{d} {h}-{i}')
-"2021/07/20 15-01"</code></pre>
+    <pre class="prettyprint"><code>formatTime(new Date())"刚刚"formatTime(new Date() - 60 * 2 * 1000)"2分钟前"formatTime(new Date() - 60 * 60 * 2 * 1000)"2小时前"formatTime(new Date() - 60 * 60 * 24 * 1 * 1000)"1天前"formatTime(new Date('2021-07-20 15:01') , '{y}-{m}-{d} {h}:{i}')"2021-07-20 15:01"formatTime(new Date('2021-07-20 15:01') , '{y}/{m}/{d} {h}-{i}')"2021/07/20 15-01"</code></pre>
 
 
 
@@ -2230,8 +2208,7 @@ formatTime(new Date('2021-07-20 15:01') , '{y}/{m}/{d} {h}-{i}')
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>const object = { 'a': { 'b': { 'c': 3 } } }
-getObjVal(object, "a.b.c") => 3</code></pre>
+    <pre class="prettyprint"><code>const object = { 'a': { 'b': { 'c': 3 } } }getObjVal(object, "a.b.c") => 3</code></pre>
 
 
 
@@ -2418,9 +2395,7 @@ getObjVal(object, "a.b.c") => 3</code></pre>
     <h5>Example</h5>
     
     <pre class="prettyprint"><code>console.log(getSearchParam('id','https://h5.qq.com/matchrank/index.html?name=你好&amp;id=20180727'))
- console.log(getSearchParam('name','https://h5.qq.com/matchrank/index.html?name=你好&amp;id=20180727'))
-// 20180727
-// 你好</code></pre>
+ console.log(getSearchParam('name','https://h5.qq.com/matchrank/index.html?name=你好&amp;id=20180727'))// 20180727// 你好</code></pre>
 
 
 
@@ -2602,12 +2577,7 @@ getObjVal(object, "a.b.c") => 3</code></pre>
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>isInteger(3) => true
-isInteger(3.3) => false
-isInteger('') => false
-isInteger('3') => false
-isInteger(true) => false
-isInteger([]) => false</code></pre>
+    <pre class="prettyprint"><code>isInteger(3) => trueisInteger(3.3) => falseisInteger('') => falseisInteger('3') => falseisInteger(true) => falseisInteger([]) => false</code></pre>
 
 
 
@@ -3446,8 +3416,7 @@ isInteger([]) => false</code></pre>
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>thousandthPlace(123456.12)
-"123,456.12"</code></pre>
+    <pre class="prettyprint"><code>thousandthPlace(123456.12)"123,456.12"</code></pre>
 
 
 
@@ -3796,8 +3765,7 @@ isInteger([]) => false</code></pre>
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>toFixed(0.3358) => "0.34"  
-toFixed('0.3358') => "0.34"  </code></pre>
+    <pre class="prettyprint"><code>toFixed(0.3358) => "0.34"  toFixed('0.3358') => "0.34"  </code></pre>
 
 
 
@@ -3929,7 +3897,7 @@ toFixed('0.3358') => "0.34"  </code></pre>
 
 
 
-    
+
     
 </div>
 
@@ -3945,5 +3913,11 @@ toFixed('0.3358') => "0.34"  </code></pre>
 <script src="scripts/collapse.js" defer></script>
 
 
+<script type="module">
+    // 一、导入全部
+    import  * as allModule  from '../src/index.js'
+    window.allModule=allModule
+    console.log('如果想在控制台测试方法，可以在allModule上找你想测试的方法',allModule)
+</script>
 </body>
 </html>

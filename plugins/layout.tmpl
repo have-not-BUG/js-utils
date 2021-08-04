@@ -50,7 +50,7 @@
     <?js } ?>
 
     <?js= content ?>
-    
+
     <?js if (env.conf.docdash.disqus) { ?>
     <div id="disqus_thread"></div>
     <script>
@@ -89,5 +89,11 @@
         }
     }
 } ?>
+<script type="module">
+    // 一、导入全部
+    import  * as allModule  from '../src/index.js'
+    window.allModule=allModule
+    console.log('如果想在控制台测试方法，可以在allModule上找你想测试的方法',allModule)
+</script>
 </body>
 </html>
