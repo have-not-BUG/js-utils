@@ -43,7 +43,7 @@ console.log('removeArrRepeat',removeArrRepeat([1,2,3,3,4,9,8,8]))
 
 2、jsdoc注释修改支持热更新(hot update) /实时更新(live update)文档
 
-3、支持实时测试/查看各个函数的运行效果
+3、支持实时测试/查看各个函数的运行效果(在node及谷歌浏览器控制台chrome devTools均可以)
 
 4、支持在该项目直接发布npm包(使用rollup打包)，且该npm里的代码会自动将ES6+语法转换为ES5语法
 
@@ -68,7 +68,12 @@ console.log('removeArrRepeat',removeArrRepeat([1,2,3,3,4,9,8,8]))
 
 3、使用`npm run build:npmdev` 打包项目未压缩的npm文件（会在项目根目录生成npm目录）
 
-4、使用`npm run test:use` 通过`nodemon`调用未压缩的npm文件 `npm/cjs/index.js` ，可以编辑`npm/cjs/index.js`文件 实时测试/调试各个函数的运行效果
+4、打开文档页面控制台Chrome devTools，输入`allModule.你想测试的方法（如allModule.browserInfo()）` 可以选择你想要调试/测试的方法
+
+![image.png](https://upload-images.jianshu.io/upload_images/2166980-a79386568893b005.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+5、使用`npm run test:use` 通过`nodemon`调用未压缩的npm文件 `npm/cjs/index.js` ，可以编辑`npm/cjs/index.js`文件 实时测试/调试各个函数的运行效果
 
 
 
@@ -76,7 +81,7 @@ console.log('removeArrRepeat',removeArrRepeat([1,2,3,3,4,9,8,8]))
 
 
 # 五、待完成
-1、支持方便地在浏览器控制台实时测试/调试各个函数的运行效果
+~~1、支持方便地在浏览器控制台实时测试/调试各个函数的运行效果~~
 
 ~~2、发布npm包~~
 
