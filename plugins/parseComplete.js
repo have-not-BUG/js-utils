@@ -11,11 +11,11 @@ exports.handlers = {
         const hotupdateFilesAndDir=`${process.cwd()}/hotupdate/src`;
         const docsFilesAndDir=`${process.cwd()}/docs/src`;
         fse.copy(originFilesAndDir, hotupdateFilesAndDir)
-            .then(() => console.log('success!'))
-            .catch(err => console.error(err))
+            .then(() => console.log(`从${originFilesAndDir}复制至${hotupdateFilesAndDir}成功！`))
+            .catch(err => console.error(`从${originFilesAndDir}复制至${hotupdateFilesAndDir}失败！，原因为${err}`))
 
         fse.copy(originFilesAndDir, docsFilesAndDir)
-            .then(() => console.log('success!'))
-            .catch(err => console.error(err))
+            .then(() => console.log(`从${originFilesAndDir}复制至${docsFilesAndDir}成功！`))
+            .catch(err => console.error(`从${originFilesAndDir}复制至${docsFilesAndDir}失败！，原因为${err}`))
     }
 };
