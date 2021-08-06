@@ -19,20 +19,33 @@
 
 # 二、使用方法
 
-0、查看文档
+### 1、查看文档
 
+1.1 初看
+ 
 js工具库（常用函数）的文档地址为：https://have-not-bug.github.io/js-utils
 (文档采用的是jsdoc+docdash主题。)
 看是否有适合自己的方法
 ![文档界面](https://publicimage-1251317493.file.myqcloud.com/reportBug/202107191818355815.png)
 
-1、安装npm包
+1.2 细看
+
+打开文档页面的开发者控制台如Chrome devTools，输入`jsUtilsLc.你想测试的方法（如jsUtilsLc.browserInfo()）` 可以选择你想要查看/测试的方法
+
+![image.png](https://upload-images.jianshu.io/upload_images/2166980-35f72466526c3e99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+由于文档使用了ES Module引入js，因此在控制台输入`jsUtilsLc.你想测试的方法`查看效果的功能只支持如下浏览器：
+![image.png](https://upload-images.jianshu.io/upload_images/2166980-c1554642963d5195.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+###  2、安装npm包
 
 `npm i js-utils-lc`
 
-2、引入并使用
+### 3、引入并使用
 
-2.1 ES6
+3.1 ES Module
 
 ```javascript
 // 按需引入
@@ -48,7 +61,7 @@ console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8
 
 ```
 
-2.2 CommonJS
+3.2 CommonJS
 
 
 ```javascript
@@ -66,7 +79,7 @@ console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8
 ```
 
 
-2.3 浏览器script
+3.3 浏览器script
 ```
 <script src="https://cdn.jsdelivr.net/npm/js-utils-lc"></script>
 <script>
@@ -85,7 +98,7 @@ console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8
 
 2、jsdoc注释修改支持热更新(hot update) /实时更新(live update)文档
 
-3、支持实时测试/查看各个函数的运行效果(在node及谷歌浏览器控制台chrome devTools均可以)
+3、支持实时测试/查看各个函数的运行效果(在谷歌浏览器控制台chrome devTools及node均可以)
 
 4、支持在该项目直接发布npm包(使用rollup打包)，且该npm里的代码会自动将ES6+语法转换为ES5语法
 
@@ -101,7 +114,14 @@ console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8
 
 3、在`src/index.js`文件中将上一步js文件编写的函数`export`一遍
 
-4、使用`npm run build` 打包项目文档（会在项目根目录生成docs目录）及 已压缩的npm文件（会在项目根目录生成npm目录，npm/amd 为amd规范，npm/cjs 为CommonJs规范，npm/es 为ES Moudle规范）
+4、直接编辑`src/global/方法名.js`，可以在Chrome devTools 实时查看运行效果
+如下图我编辑`src/global/getNowDate.js`
+![image.png](https://upload-images.jianshu.io/upload_images/2166980-525d749643559406.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+在文档控制台可以实时看到效果：
+
+![image.png](https://upload-images.jianshu.io/upload_images/2166980-b4bd762365aa6ef6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+5、使用`npm run build` 打包项目文档（会在项目根目录生成docs目录）及 已压缩的npm文件（会在项目根目录生成npm目录，npm/amd 为amd规范，npm/cjs 为CommonJs规范，npm/es 为ES Moudle规范）
 
 
 
@@ -112,12 +132,10 @@ console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8
 
 3、使用`npm run build:npmdev` 打包项目未压缩的npm文件（会在项目根目录生成npm目录）
 
-4、打开文档页面控制台Chrome devTools，输入`jsUtilsLc.你想测试的方法（如jsUtilsLc.browserInfo()）` 可以选择你想要调试/测试的方法
-
-![image.png](https://upload-images.jianshu.io/upload_images/2166980-35f72466526c3e99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-5、使用`npm run test:use` 通过`nodemon`调用未压缩的npm文件 `npm/cjs/index.js` ，可以编辑`npm/cjs/index.js`文件 实时测试/调试各个函数的运行效果
+
+6、不推荐----使用`npm run test:use` 通过`nodemon`调用未压缩的npm文件 `npm/cjs/index.js` ，可以编辑`npm/cjs/index.js`文件 实时测试/调试各个函数的运行效果
 
 
 
