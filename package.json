@@ -1,10 +1,11 @@
 {
   "name": "js-utils-lc",
-  "version": "0.0.9",
+  "version": "1.0.0",
   "private": false,
   "description": "JavaScript工具函数库文档及npm管理",
-  "main": "npm/cjs/index.js",
+  "main": "npm/umd/index.js",
   "module": "npm/es/index.js",
+  "browser": "npm/umd/index.js",
   "sideEffects": false,
   "files": [
     "npm"
