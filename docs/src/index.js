@@ -22,6 +22,7 @@ export { default as digitUppercase } from './global/digitUppercase.js'
 export { default as formatTime } from './global/formatTime.js'
 export { default as thousandthPlace } from './global/thousandthPlace.js'
 export { default as throttle } from './global/throttle.js'
+export { default as testp } from './global/testp.js'
 
 // export { default as toUTF8 } from './global/toUTF8'
 
@@ -31,8 +32,8 @@ export { default as throttle } from './global/throttle.js'
 // import removeArrRepeat from './global/removeArrRepeat'
 // import getNowDate from './global/getNowDate'
 //
-// const js_utils_lc={
+// const jsUtilsLc={
 //     removeArrRepeat,
 //     getNowDate
 // }
-// export default js_utils_lc
+// export default jsUtilsLc
