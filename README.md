@@ -121,7 +121,7 @@ console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8
 
 ![image.png](https://upload-images.jianshu.io/upload_images/2166980-b4bd762365aa6ef6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-5、使用`npm run build` 打包项目文档（会在项目根目录生成docs目录）及 已压缩的npm文件（会在项目根目录生成npm目录，npm/amd 为amd规范，npm/cjs 为CommonJs规范，npm/es 为ES Moudle规范）
+5、使用`npm run build` 打包项目文档（会在项目根目录生成docs目录）及 已压缩的npm文件（会在项目根目录生成npm目录，npm/amd 为amd规范，npm/cjs 为CommonJs规范，npm/es 为ES Moudle规范，npm/umd 为umd规范）
 
 
 
