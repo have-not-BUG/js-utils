@@ -83,15 +83,49 @@
 <p>1、安装npm包</p>
 <p><code>npm i js-utils-lc</code></p>
 <p>2、引入并使用</p>
-<pre class="prettyprint source lang-javascript"><code>import {removeArrRepeat,getNowDate} from 'js-utils-lc'
+<p>2.1 ES6</p>
+<pre class="prettyprint source lang-javascript"><code>// 按需引入
+import {removeArrRepeat,getNowDate} from 'js-utils-lc'
 console.log('getNowDate',getNowDate())
 console.log('removeArrRepeat',removeArrRepeat([1,2,3,3,4,9,8,8]))
+
+// 引入所有
+import * as  jsUtilsLc from 'js-utils-lc'
+console.log('jsUtilsLc.getNowDate',jsUtilsLc.getNowDate())
+console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8,8]))
+
+
+</code></pre>
+<p>2.2 CommonJS</p>
+<pre class="prettyprint source lang-javascript"><code>// 按需引入
+const  { removeArrRepeat , getNowDate } = require('js-utils-lc');
+console.log('getNowDate',getNowDate())
+console.log('removeArrRepeat',removeArrRepeat([1,2,3,3,4,9,8,8]))
+
+// 引入所有
+const  jsUtilsLc= require('js-utils-lc');
+console.log('jsUtilsLc.getNowDate',jsUtilsLc.getNowDate())
+console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8,8]))
+
+
+</code></pre>
+<p>2.3 浏览器script</p>
+<pre class="prettyprint source"><code>&lt;script src=&quot;https://cdn.jsdelivr.net/npm/js-utils-lc&quot;>&lt;/script>
+&lt;script>
+console.log('jsUtilsLc.getNowDate',jsUtilsLc.getNowDate())
+console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8,8]))
+&lt;/script>
+
+
+
+
 </code></pre>
 <h1>三、该项目的功能</h1>
 <p>1、支持jsdoc注释自动生成文档（生成的文档可以很方便的查看源码）</p>
 <p>2、jsdoc注释修改支持热更新(hot update) /实时更新(live update)文档</p>
 <p>3、支持实时测试/查看各个函数的运行效果(在node及谷歌浏览器控制台chrome devTools均可以)</p>
 <p>4、支持在该项目直接发布npm包(使用rollup打包)，且该npm里的代码会自动将ES6+语法转换为ES5语法</p>
+<p>5、该npm包支持Tree Shaking摇树优化</p>
 <h1>四、如何维护该项目</h1>
 <h3>（一） 一定用到的方法</h3>
 <p>1、使用<code>gulp serve</code>或者<code>npm run dev</code> 指令启动文档服务 （支持热更新，会在项目根目录生成hotupdate目录）</p>
@@ -102,8 +136,8 @@ console.log('removeArrRepeat',removeArrRepeat([1,2,3,3,4,9,8,8]))
 <p>1、使用<code>npm run build:doc</code> 打包项目文档（会在项目根目录生成docs目录）</p>
 <p>2、使用<code>npm run build:npmprod</code> 打包已压缩的npm文件 （会在项目根目录生成npm目录，npm/amd 为amd规范，npm/cjs 为CommonJs规范，npm/es 为ES Moudle规范）</p>
 <p>3、使用<code>npm run build:npmdev</code> 打包项目未压缩的npm文件（会在项目根目录生成npm目录）</p>
-<p>4、打开文档页面控制台Chrome devTools，输入<code>allModule.你想测试的方法（如allModule.browserInfo()）</code> 可以选择你想要调试/测试的方法</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/2166980-a79386568893b005.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>4、打开文档页面控制台Chrome devTools，输入<code>jsUtilsLc.你想测试的方法（如jsUtilsLc.browserInfo()）</code> 可以选择你想要调试/测试的方法</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2166980-35f72466526c3e99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p>5、使用<code>npm run test:use</code> 通过<code>nodemon</code>调用未压缩的npm文件 <code>npm/cjs/index.js</code> ，可以编辑<code>npm/cjs/index.js</code>文件 实时测试/调试各个函数的运行效果</p>
 <h1>五、待完成</h1>
 <p><s>1、支持方便地在浏览器控制台实时测试/调试各个函数的运行效果</s></p>
@@ -140,9 +174,9 @@ console.log('removeArrRepeat',removeArrRepeat([1,2,3,3,4,9,8,8]))
 
 <script type="module">
     // 一、导入全部
-    import  * as allModule  from './src/index.js'
-    window.allModule=allModule
-    console.log('如果想在控制台测试方法，可以在allModule上找你想测试的方法',allModule)
+    import  * as jsUtilsLc  from './src/index.js'
+    window.jsUtilsLc=jsUtilsLc
+    console.log('如果想在控制台测试方法，可以在jsUtilsLc上找你想测试的方法',jsUtilsLc)
 </script>
 </body>
 </html>
