@@ -19,7 +19,7 @@
     "build:npmprod": "rimraf npm && rollup -c  --environment NODE_ENV:production",
     "test:use": "concurrently \"rollup -c  -w --environment NODE_ENV:development\" \"nodemon npm/cjs/index.js\"",
     "rm": "rimraf npm && rimraf docs",
-    "prepublishOnly": "npm version patch"
+    "prepublishOnly": "standard-version"
   },
   "repository": {
     "type": "git",
@@ -68,6 +68,7 @@
     "rollup-plugin-json": "~4.0.0",
     "rollup-plugin-livereload": "~2.0.5",
     "rollup-plugin-serve": "~1.1.0",
-    "rollup-plugin-terser": "~7.0.2"
+    "rollup-plugin-terser": "~7.0.2",
+    "standard-version": "~9.3.1"
   }
 }
