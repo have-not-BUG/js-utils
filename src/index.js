@@ -23,6 +23,7 @@ export { default as formatTime } from './global/formatTime.js'
 export { default as thousandthPlace } from './global/thousandthPlace.js'
 export { default as throttle } from './global/throttle.js'
 export { default as testp } from './global/testp.js'
+export { default as isWechatBrowser } from './global/isWechatBrowser.js'
 
 // export { default as toUTF8 } from './global/toUTF8'
 
