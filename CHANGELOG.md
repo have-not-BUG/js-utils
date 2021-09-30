@@ -1,3 +1,14 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [1.1.0](https://github.com/have-not-BUG/js-utils/compare/v1.0.5...v1.1.0) (2021-09-26)
+
+
+### Features
+
+* 新增判断是否为微信内置浏览器 ([d784ca5](https://github.com/have-not-BUG/js-utils/commit/d784ca528c4ff0c90e7039b1b48b5d8d96c3ce86))
+
 ## [1.0.5](https://github.com/have-not-BUG/js-utils/compare/v1.0.4...v1.0.5) (2021-08-17)
 
 
