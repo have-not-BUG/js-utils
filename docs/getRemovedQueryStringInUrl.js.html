@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>formatCurrency.js - 函数工具库</title>
+    <title>getRemovedQueryStringInUrl.js - 函数工具库</title>
     
     <meta name="description" content="日常 JavaScript  函数工具库，方便查看" />
     
@@ -40,7 +40,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">formatCurrency.js</h1>
+    <h1 class="page-title">getRemovedQueryStringInUrl.js</h1>
     
 
     
@@ -51,31 +51,81 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @description 数值货币型转换
- * @param {String|Number} value  金额
- * @param {String} currency 货币符号 默认空
- * @param {String} decimals  保留位数 默认2位
- * @return {String} 货币型的字符
- * 
- * @example
- * formatCurrency(12333.514, '$', 2) => $12,333.51
+ * 移除url中某个查询字符串及其对应的值（支持hash及history模式）
+ * @param queryKey 某一个查询字符串
+ * @param url 网址
+ * @return {string}
+ * @example getRemovedQueryStringInUrl('token','http://127.0.0.1:8082/?token=aaa')
  */
-function formatCurrency(value, currency = '', decimals = 2) {
-  value = parseFloat(value);
-  if (!isFinite(value) || (!value &amp;&amp; value !== 0)) return '';
-  const digitsRE = /(\d{3})(?=\d)/g;
-  const stringified = Math.abs(value).toFixed(decimals);
-  const _int = decimals ? stringified.slice(0, -1 - decimals) : stringified;
-  const i = _int.length % 3;
-  const head = i > 0 ? _int.slice(0, i) + (_int.length > 3 ? ',' : '') : '';
-  const _float = decimals ? stringified.slice(-1 - decimals) : '';
-  const sign = value &lt; 0 ? '-' : '';
-  return (
-    sign + currency + head + _int.slice(i).replace(digitsRE, '$1,') + _float
-  );
+function getRemovedQueryStringInUrl(queryKey,url) {
+    //  'http://127.0.0.1:8080/?a=sdds&amp;token=t&amp;user=787#/gamelist'
+    //  'http://127.0.0.1:8080/?a=sdds&amp;token=taa&amp;user=787#/gamelist'
+    //  'http://127.0.0.1:8080/#/gamelist?a=b&amp;token=11&amp;user=787'
+    // 'http://127.0.0.1:8080/?a=sdds&amp;token=t&amp;user=787'
+
+    //  'http://127.0.0.1:8080/?a=sdds&amp;token=t&amp;user=787#/gamelist'
+    //  'http://127.0.0.1:8080/?a=sdds&amp;token=t&amp;user=787'
+    //  'http://127.0.0.1:8080/?a=sdds'
+   if(!queryKey || !url){
+       console.error('缺少参数')
+       return ''
+   }
+   const removedQueryKeyUrlArray=url.split(`${queryKey}=`);
+    //  'http://127.0.0.1:8080/? sdds&amp;token=t&amp;user=787#/gamelist'
+    //  'http://127.0.0.1:8080/?a=sdds&amp; t&amp;user=787#/gamelist'
+    //  'http://127.0.0.1:8080/#/gamelist?a=b&amp; 11&amp;user=787'
+    // 'http://127.0.0.1:8080/? sdds&amp;token=t&amp;user=787'
+
+    //  'http://127.0.0.1:8080/?a=sdds&amp;token=t&amp; 787#/gamelist'
+    //  'http://127.0.0.1:8080/?a=sdds&amp;token=t&amp; 787'
+    //  'http://127.0.0.1:8080/? sdds'
+    if(!removedQueryKeyUrlArray[1]){
+        return url
+    }
+    console.log('url',url)
+    console.log('queryKey',queryKey)
+    if(removedQueryKeyUrlArray[1].indexOf('&amp;') !==-1){
+        // 1、第二段 有&amp;的情况
+        const removedAndAndQueryKey=removedQueryKeyUrlArray[1].replace(/^\S+?&amp;/,'')
+
+        // console.log('andFrondString',removedAndAndQueryKey)
+        console.log('r',`${removedQueryKeyUrlArray[0]}${removedAndAndQueryKey}`)
+        return `${removedQueryKeyUrlArray[0]}${removedAndAndQueryKey}`
+
+    }else {
+        // 2、第二段 无&amp;的情况
+        const frontPartRemoved=removedQueryKeyUrlArray[0].slice(0,removedQueryKeyUrlArray[0].length-1)
+        if(removedQueryKeyUrlArray[1].indexOf('#') !==-1){
+            // 2.1第二段 有#的情况
+            const endHashPart=removedQueryKeyUrlArray[1].split('#')[1];
+            console.log('r',`${frontPartRemoved}#${endHashPart}`)
+            return `${frontPartRemoved}#${endHashPart}`
+        }else {
+            // 2.2第二段 无#的情况
+            console.log('frontPartRemoved',frontPartRemoved)
+            return frontPartRemoved
+        }
+
+
+    }
+
+
+
 }
 
-export default formatCurrency;</code></pre>
+// 测试用例
+getRemovedQueryStringInUrl('a','http://127.0.0.1:8080/?a=sdds&amp;token=t&amp;user=787#/gamelist')
+getRemovedQueryStringInUrl('token','http://127.0.0.1:8080/?a=sdds&amp;token=taa&amp;user=787#/gamelist')
+getRemovedQueryStringInUrl('token','http://127.0.0.1:8080/#/gamelist?a=b&amp;token=11&amp;user=787')
+getRemovedQueryStringInUrl('a','http://127.0.0.1:8080/?a=sdds&amp;token=t&amp;user=787')
+
+getRemovedQueryStringInUrl('user','http://127.0.0.1:8080/?a=sdds&amp;token=t&amp;user=787#/gamelist')
+getRemovedQueryStringInUrl('user','http://127.0.0.1:8080/?a=sdds&amp;token=t&amp;user=787')
+getRemovedQueryStringInUrl('a','http://127.0.0.1:8080/?a=sdds')
+
+
+export default getRemovedQueryStringInUrl
+</code></pre>
         </article>
     </section>
 
