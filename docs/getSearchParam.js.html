@@ -53,7 +53,7 @@
             <pre class="prettyprint source linenums"><code>/**
  * 获取查询字符串中某个字段的值
  * @param name {string} 查询字符串中的某个字段
- * @param url {string} 网址(不填，则为当前网址)
+ * @param [url=window.location.href] {string} 网址(不填，则为当前网址)
  * @return {string}
  * @example
  * console.log(getSearchParam('id','https://h5.qq.com/matchrank/index.html?name=你好&amp;id=20180727'))
