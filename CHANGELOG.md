@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/have-not-BUG/js-utils/compare/v1.1.0...v1.2.0) (2021-10-08)
+
+
+### Features
+
+* 打包-新增移除网址中某个查询字符串及其对应的值功能 ([a318137](https://github.com/have-not-BUG/js-utils/commit/a31813795aaa77226cbdbc7b76e10cdea23f82c8))
+* 新增移除网址中某个查询字符串及其对应的值功能 ([f4278e6](https://github.com/have-not-BUG/js-utils/commit/f4278e653ab51837ff0cb03293432b54dc51917b))
+
 ## [1.1.0](https://github.com/have-not-BUG/js-utils/compare/v1.0.5...v1.1.0) (2021-09-26)
 
 
