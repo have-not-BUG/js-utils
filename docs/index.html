@@ -116,16 +116,23 @@ console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8
 
 </code></pre>
 <p>3.3 浏览器script</p>
-<pre class="prettyprint source"><code>&lt;script src=&quot;https://cdn.jsdelivr.net/npm/js-utils-lc&quot;>&lt;/script>
+<pre class="prettyprint source"><code>// 推荐---有sourcemap
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/js-utils-lc/npm/umd/index.js&quot;>&lt;/script>
 &lt;script>
 console.log('jsUtilsLc.getNowDate',jsUtilsLc.getNowDate())
 console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8,8]))
 &lt;/script>
 
-
-
+</code></pre>
+<pre class="prettyprint source"><code>// 不推荐--无sourcemap
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/js-utils-lc&quot;>&lt;/script>
+&lt;script>
+console.log('jsUtilsLc.getNowDate',jsUtilsLc.getNowDate())
+console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8,8]))
+&lt;/script>
 
 </code></pre>
+<p>示例：<a href="https://have-not-bug.github.io/js-utils/test.html">浏览器script调用示例</a></p>
 <h1>三、该项目的功能</h1>
 <p>1、支持jsdoc注释自动生成文档（生成的文档可以很方便的查看源码）</p>
 <p>2、jsdoc注释修改支持热更新(hot update) /实时更新(live update)文档</p>
@@ -154,6 +161,7 @@ console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8
 <p><s>3、支持https://img.shields.io/</s></p>
 <p>4、补充常用函数</p>
 <p><s>5、补充docs主页网址及截图</s></p>
+<p>6、添加单元测试</p>
 <h1>六、参考资料</h1>
 <p>1、<a href="https://github.com/imondo/js-utils">imondo/js-utils</a></p>
 <p>2、<a href="https://github.com/nhn/tui.jsdoc-template">nhn/tui.jsdoc-template</a></p>

@@ -116,8 +116,8 @@ export default {
             // compress:{
             //
             // },
-            keep_fnames:true,
-            keep_classnames: true,
+            keep_fnames:false,// 76.5kb => 66.8kb
+            keep_classnames: false, // 76.5kb => 66.8kb
             // enclose: true,
         }),
         // // uglify()
