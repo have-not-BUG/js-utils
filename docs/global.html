@@ -2329,7 +2329,7 @@
 
     
 
-    <h4 class="name" id="getRemovedQueryStringInUrl"><span class="type-signature"></span>getRemovedQueryStringInUrl<span class="signature">(queryKey, url)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="getRemovedQueryStringInUrl"><span class="type-signature"></span>getRemovedQueryStringInUrl<span class="signature">(queryKey<span class="signature-attributes">opt</span>, url<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
 
     
 
@@ -2412,7 +2412,11 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -2429,10 +2433,31 @@
 
             <td class="type">
             
+                
+<span class="param-type">string</span>
+
+
+            
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>token</code>
+                
+                </td>
             
 
             <td class="description last">某一个查询字符串</td>
@@ -2447,10 +2472,31 @@
 
             <td class="type">
             
+                
+<span class="param-type">string</span>
+
+
+            
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>window.location.href</code>
+                
+                </td>
             
 
             <td class="description last">网址</td>
@@ -2501,7 +2547,7 @@
 
     
 
-    <h4 class="name" id="getSearchParam"><span class="type-signature"></span>getSearchParam<span class="signature">(name, url)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="getSearchParam"><span class="type-signature"></span>getSearchParam<span class="signature">(name, url<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
 
     
 
@@ -2585,7 +2631,11 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -2610,7 +2660,19 @@
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last">查询字符串中的某个字段</td>
@@ -2633,7 +2695,23 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>window.location.href</code>
+                
+                </td>
             
 
             <td class="description last">网址(不填，则为当前网址)</td>
