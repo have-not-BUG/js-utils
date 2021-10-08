@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/have-not-BUG/js-utils/compare/v1.2.0...v1.3.0) (2021-10-08)
+
+
+### Features
+
+* 新增sourcemap及部分函数传参可选 ([9da1806](https://github.com/have-not-BUG/js-utils/commit/9da18062ae4f43d869247808eaf52a4954db5d80))
+
 ## [1.2.0](https://github.com/have-not-BUG/js-utils/compare/v1.1.0...v1.2.0) (2021-10-08)
 
 
