@@ -1,7 +1,7 @@
 /**
  * 移除url中某个查询字符串及其对应的值（支持hash及history模式）
- * @param queryKey 某一个查询字符串
- * @param url 网址
+ * @param  {string} [queryKey=token] 某一个查询字符串
+ * @param  {string} [url=window.location.href] 网址
  * @return {string}
  * @example getRemovedQueryStringInUrl('token','http://127.0.0.1:8082/?token=aaa')
  */
@@ -14,10 +14,12 @@ function getRemovedQueryStringInUrl(queryKey,url) {
     //  'http://127.0.0.1:8080/?a=sdds&token=t&user=787#/gamelist'
     //  'http://127.0.0.1:8080/?a=sdds&token=t&user=787'
     //  'http://127.0.0.1:8080/?a=sdds'
-   if(!queryKey || !url){
-       console.error('缺少参数')
-       return ''
+   if(!queryKey){
+       queryKey='token'
    }
+    if(!url){
+        url=window.location.href;
+    }
    const removedQueryKeyUrlArray=url.split(`${queryKey}=`);
     //  'http://127.0.0.1:8080/? sdds&token=t&user=787#/gamelist'
     //  'http://127.0.0.1:8080/?a=sdds& t&user=787#/gamelist'
@@ -62,14 +64,14 @@ function getRemovedQueryStringInUrl(queryKey,url) {
 }
 
 // 测试用例
-getRemovedQueryStringInUrl('a','http://127.0.0.1:8080/?a=sdds&token=t&user=787#/gamelist')
-getRemovedQueryStringInUrl('token','http://127.0.0.1:8080/?a=sdds&token=taa&user=787#/gamelist')
-getRemovedQueryStringInUrl('token','http://127.0.0.1:8080/#/gamelist?a=b&token=11&user=787')
-getRemovedQueryStringInUrl('a','http://127.0.0.1:8080/?a=sdds&token=t&user=787')
-
-getRemovedQueryStringInUrl('user','http://127.0.0.1:8080/?a=sdds&token=t&user=787#/gamelist')
-getRemovedQueryStringInUrl('user','http://127.0.0.1:8080/?a=sdds&token=t&user=787')
-getRemovedQueryStringInUrl('a','http://127.0.0.1:8080/?a=sdds')
+// getRemovedQueryStringInUrl('a','http://127.0.0.1:8080/?a=sdds&token=t&user=787#/gamelist')
+// getRemovedQueryStringInUrl('token','http://127.0.0.1:8080/?a=sdds&token=taa&user=787#/gamelist')
+// getRemovedQueryStringInUrl('token','http://127.0.0.1:8080/#/gamelist?a=b&token=11&user=787')
+// getRemovedQueryStringInUrl('a','http://127.0.0.1:8080/?a=sdds&token=t&user=787')
+//
+// getRemovedQueryStringInUrl('user','http://127.0.0.1:8080/?a=sdds&token=t&user=787#/gamelist')
+// getRemovedQueryStringInUrl('user','http://127.0.0.1:8080/?a=sdds&token=t&user=787')
+// getRemovedQueryStringInUrl('a','http://127.0.0.1:8080/?a=sdds')
 
 
 export default getRemovedQueryStringInUrl

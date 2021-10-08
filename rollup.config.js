@@ -58,6 +58,7 @@ export default {
             format: 'es',
             dir: 'npm/es',
             name: 'jsUtilsLc',
+            sourcemap:true
             // format: 'amd',
             // dir:'amd',
             // file: 'out.js',
@@ -70,6 +71,7 @@ export default {
             name: 'jsUtilsLc',
             format: 'amd',
             dir: 'npm/amd',
+            sourcemap:true
             // file: 'out.js',
             // inlineDynamicImports: true
 
@@ -80,6 +82,7 @@ export default {
             name: 'jsUtilsLc',
             format: 'cjs',
             dir: 'npm/cjs',
+            sourcemap:true
             // file: 'out.js',
             // inlineDynamicImports: true
 
@@ -88,6 +91,7 @@ export default {
             name:'jsUtilsLc',
             format: 'umd',
             dir:'npm/umd',
+            sourcemap:true
             // file: 'out.js',
             // inlineDynamicImports: true
 
@@ -104,7 +108,18 @@ export default {
             exclude: 'node_modules/**'
         }),
         // cjsToBrowserify(),
-        !isDev && terser(),
+        !isDev && terser({
+            // sourceMap:{
+            //
+            // },
+            safari10:true,
+            // compress:{
+            //
+            // },
+            keep_fnames:true,
+            keep_classnames: true,
+            // enclose: true,
+        }),
         // // uglify()
         // //
         //     // 开发环境通过浏览器进行调试
