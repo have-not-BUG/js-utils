@@ -1,6 +1,6 @@
 {
   "name": "js-utils-lc",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "private": false,
   "description": "JavaScript工具函数库文档及npm管理",
   "main": "npm/umd/index.js",
@@ -13,10 +13,11 @@
   "scripts": {
     "serve": "gulp serve",
     "dev": "gulp serve",
-    "build": "npm run build:doc & npm run build:npmprod",
+    "build": "npm run build:doc & npm run build:npmall",
     "build:doc": "rimraf docs && jsdoc -c jsdoc.json",
     "build:npmdev": "rimraf npm && rollup -c -w --environment NODE_ENV:development",
     "build:npmprod": "rimraf npm && rollup -c  --environment NODE_ENV:production",
+    "build:npmall": "rimraf npm && rollup -c  --environment NODE_ENV:development && rollup -c  --environment NODE_ENV:production",
     "test:use": "concurrently \"rollup -c  -w --environment NODE_ENV:development\" \"nodemon npm/cjs/index.js\"",
     "rm": "rimraf npm && rimraf docs",
     "prepublishOnly": "standard-version"
