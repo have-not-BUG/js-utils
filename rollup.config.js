@@ -58,7 +58,7 @@ export default {
             format: 'es',
             dir: isDev?'npm/es':"npm/min/es",
             name: 'jsUtilsLc',
-            sourcemap:!isDev,
+            sourcemap:true,
             // format: 'amd',
             // dir:'amd',
             // file: 'out.js',
@@ -72,7 +72,7 @@ export default {
             name: 'jsUtilsLc',
             format: 'amd',
             dir: isDev?'npm/amd':"npm/min/amd",
-             sourcemap:!isDev,
+            sourcemap:true,
             // file: isDev?'index.js':'index.min.js',
             // file: 'out.js',
             // inlineDynamicImports: true
@@ -84,7 +84,7 @@ export default {
             name: 'jsUtilsLc',
             format: 'cjs',
             dir: isDev?'npm/cjs':"npm/min/cjs",
-             sourcemap:!isDev,
+            sourcemap:true,
             // file: isDev?'index.js':'index.min.js',
             // file: 'out.js',
             // inlineDynamicImports: true
@@ -94,7 +94,7 @@ export default {
             name:'jsUtilsLc',
             format: 'umd',
             dir: isDev?'npm/umd':"npm/min/umd",
-             sourcemap:!isDev,
+            sourcemap:true,
             // file: isDev?'index.js':'index.min.js',
             // file: 'out.js',
             // inlineDynamicImports: true
