@@ -92,14 +92,14 @@ console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8
 
 ```
 // 不推荐--未压缩
-<script src="https://cdn.jsdelivr.net/npm/js-utils-lc"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-utils-lc/npm/umd/index.js"></script>
 <script>
 console.log('jsUtilsLc.getNowDate',jsUtilsLc.getNowDate())
 console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8,8]))
 </script>
 
 ```
-示例：[浏览器script调用示例](https://have-not-bug.github.io/js-utils/test.html)
+示例：[浏览器script调用示例](https://codesandbox.io/s/jolly-easley-2gde8?file=/index.html)
 
 # 三、该项目的功能
 1、支持jsdoc注释自动生成文档（生成的文档可以很方便的查看源码）
