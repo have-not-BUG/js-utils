@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/have-not-BUG/js-utils/compare/v1.4.3...v1.5.0) (2021-10-14)
+
+
+### Features
+
+* 未压缩版也开启sourcemap ([f928b71](https://github.com/have-not-BUG/js-utils/commit/f928b7149ff190989796b88adde6cc4f69c679f6))
+
 ### [1.4.3](https://github.com/have-not-BUG/js-utils/compare/v1.4.2...v1.4.3) (2021-10-14)
 
 ### [1.4.2](https://github.com/have-not-BUG/js-utils/compare/v1.4.1...v1.4.2) (2021-10-14)
