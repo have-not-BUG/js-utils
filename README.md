@@ -81,8 +81,8 @@ console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8
 
 3.3 浏览器script
 ```
-// 推荐---有sourcemap
-<script src="https://cdn.jsdelivr.net/npm/js-utils-lc/npm/umd/index.js"></script>
+// 推荐---压缩后且有sourcemap
+<script src="https://cdn.jsdelivr.net/npm/js-utils-lc/npm/min/umd/index.js"></script>
 <script>
 console.log('jsUtilsLc.getNowDate',jsUtilsLc.getNowDate())
 console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8,8]))
@@ -91,7 +91,7 @@ console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8
 ```
 
 ```
-// 不推荐--无sourcemap
+// 不推荐--未压缩
 <script src="https://cdn.jsdelivr.net/npm/js-utils-lc"></script>
 <script>
 console.log('jsUtilsLc.getNowDate',jsUtilsLc.getNowDate())
