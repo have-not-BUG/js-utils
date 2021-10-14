@@ -99,7 +99,11 @@ console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8
 </script>
 
 ```
-示例：[浏览器script调用示例](https://codesandbox.io/s/jolly-easley-2gde8?file=/index.html)
+实际使用示例：
+
+1、[多页面类型项目浏览器script调用示例](https://codesandbox.io/s/jolly-easley-2gde8?file=/index.html)
+
+2、[单页面类型项目调用示例](https://codesandbox.io/s/silly-star-glq9d?file=/src/main.js)
 
 # 三、该项目的功能
 1、支持jsdoc注释自动生成文档（生成的文档可以很方便的查看源码）
