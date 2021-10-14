@@ -116,15 +116,15 @@ console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8
 
 </code></pre>
 <p>3.3 浏览器script</p>
-<pre class="prettyprint source"><code>// 推荐---有sourcemap
-&lt;script src=&quot;https://cdn.jsdelivr.net/npm/js-utils-lc/npm/umd/index.js&quot;>&lt;/script>
+<pre class="prettyprint source"><code>// 推荐---压缩后且有sourcemap
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/js-utils-lc/npm/min/umd/index.js&quot;>&lt;/script>
 &lt;script>
 console.log('jsUtilsLc.getNowDate',jsUtilsLc.getNowDate())
 console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8,8]))
 &lt;/script>
 
 </code></pre>
-<pre class="prettyprint source"><code>// 不推荐--无sourcemap
+<pre class="prettyprint source"><code>// 不推荐--未压缩
 &lt;script src=&quot;https://cdn.jsdelivr.net/npm/js-utils-lc&quot;>&lt;/script>
 &lt;script>
 console.log('jsUtilsLc.getNowDate',jsUtilsLc.getNowDate())
