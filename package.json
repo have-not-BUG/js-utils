@@ -20,7 +20,10 @@
     "build:npmall": "rimraf npm && rollup -c  --environment NODE_ENV:development && rollup -c  --environment NODE_ENV:production",
     "test:use": "concurrently \"rollup -c  -w --environment NODE_ENV:development\" \"nodemon npm/cjs/index.js\"",
     "rm": "rimraf npm && rimraf docs",
-    "prepublishOnly": "standard-version"
+    "prepublishOnly": "standard-version",
+    "jest": "jest",
+    "jest:coverage": "jest --coverage",
+    "jest:nocache": "jest --no-cache"
   },
   "repository": {
     "type": "git",
@@ -61,6 +64,8 @@
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
     "gulp-jsdoc3": "^1.0.1",
+    "jest": "^28.1.3",
+    "jest-environment-jsdom": "^28.1.3",
     "jsdoc": "^3.6.4",
     "nodemon": "~2.0.12",
     "rimraf": "~3.0.2",
