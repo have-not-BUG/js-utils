@@ -144,13 +144,13 @@ console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8
 
 3、使用`npm run build:npmdev` 打包项目未压缩的npm文件（会在项目根目录生成npm目录）
 
+4、不推荐----使用`npm run test:use` 通过`nodemon`调用未压缩的npm文件 `npm/cjs/index.js` ，可以编辑`npm/cjs/index.js`文件 实时测试/调试各个函数的运行效果
 
+### （三） 单元测试
+因本项目采用的单元测试为 jest v28.1.3，其要求Node12及以上版本，否则会报`globalThis is not defined`错误，因此如果要运行本项目的单元测试时需要Node 12版本及以上；
 
-
-6、不推荐----使用`npm run test:use` 通过`nodemon`调用未压缩的npm文件 `npm/cjs/index.js` ，可以编辑`npm/cjs/index.js`文件 实时测试/调试各个函数的运行效果
-
-
-
+1、使用`npm run jest` 跑整个单元测试
+2、使用`npm run jest 方法名` 跑某个方法的单元测试，如`npm run deepClone`
 
 
 
@@ -165,7 +165,7 @@ console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8
 
 ~~5、补充docs主页网址及截图~~
 
-6、添加单元测试
+6、添加更多的单元测试
 
 # 六、参考资料
 1、[imondo/js-utils](https://github.com/imondo/js-utils) 

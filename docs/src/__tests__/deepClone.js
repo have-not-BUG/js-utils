@@ -1,18 +1,19 @@
-import arrayEqual from '@/global/arrayEqual'
+import arrayEqual from '@/global/deepClone'
 
-describe('arrayEqual 方法测试', () => {
-  test('基本类型数组内容相同应该相等', () => {
+describe('deepClone 方法测试', () => {
+  // 简单数据类型拷贝 保证相等
+  // 复杂数据类型拷贝（数组及对象） 保证相等
+  // 超复杂数据类型拷贝（数组及对象多层组合） 保证相等
+
+  // 简单数据类型拷贝修改后 保证不相等
+  // 复杂数据类型拷贝修改后（数组及对象） 保证不相等
+  // 超复杂数据类型拷贝修改后（数组及对象多层组合） 保证不相等
+
+
+  test('简单数据类型拷贝后保证相等', () => {
     const arr1 = [1, 2, 3]
     const arr2 = [1, 2, 3]
     expect(arrayEqual(arr1, arr2)).toBe(true)
-
-    const arr3 = ['a', 'b', 'c']
-    const arr4 = ['a', 'b', 'c']
-    expect(arrayEqual(arr3, arr4)).toBe(true)
-
-    const arr5 = [1, 'a', undefined, null]
-    const arr6 = [1, 'a', undefined, null]
-    expect(arrayEqual(arr5, arr6)).toBe(true)
   })
 
   test('含有非函数引用类型内容应该相等', () => {

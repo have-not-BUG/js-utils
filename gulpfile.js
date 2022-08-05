@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var del = require('del');
 var connect = require('gulp-connect');
 var jsdoc = require('gulp-jsdoc3');
+var runJs = require('runjs');
 
 /* Demo paths */
 var SRC_DIR_PATH = path.join(__dirname, 'src');
@@ -67,7 +68,15 @@ gulp.task('watch', ['src'] ,function() {
     var watcher = gulp.watch(watchPaths, ['src', 'reload']);
 
     watcher.on('change', function (event) {
+        console.log('文件变化了====',event)
+        // 文件变化了==== { type: 'changed',
+        //   path: 'D:\\1测试demo\\js-utils\\src\\__tests__\\deepClone.spec.js' }
         console.log('File: ' + event.path + ' was ' + event.type + ', running tasks...');
+        // File: D:\1测试demo\js-utils\src\__tests__\deepClone.spec.js was changed, running tasks...
+        if(event.type ==='changed'){
+            runJs('npm run jest')
+
+        }
     });
 });
 

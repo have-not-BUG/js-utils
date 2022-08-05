@@ -1,6 +1,6 @@
-import arrayEqual from '@/global/arrayEqual'
+import arrayEqual from '@/global/byteLength'
 
-describe('arrayEqual 方法测试', () => {
+describe('byteLength 方法测试', () => {
   test('基本类型数组内容相同应该相等', () => {
     const arr1 = [1, 2, 3]
     const arr2 = [1, 2, 3]

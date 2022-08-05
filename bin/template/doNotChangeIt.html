@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no"
+          name="viewport">
+    <link rel="dns-prefetch" href="https://js.fundebug.cn/">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net/">
+    <title>{{title}}</title>
+     <!--引入fundebug。  -->
+    <script src="https://js.fundebug.cn/fundebug.2.0.0.min.js" crossorigin="anonymous"></script>
+    <script>
+        // fundebug初始化
+        if ("fundebug" in window) {
+            fundebug.init({
+                apikey: '{{apikey}}',
+                // silentDev: true, // 开发环境不启用fundebug
+                silentConsole: true,
+                setHttpBody: true
+            });
+        }
+    </script>
+     <!--引入资源及api异常监控插件-->
+    <script src="https://cdn.jsdelivr.net/gh/have-not-BUG/cdn/monitorFileApiError.js?name={{projectName}}&allWrapId=allWrap&errNoNotAlert=true"
+            data-attr="monitor-file-api-error"></script>
+    <!--说明
+    1、data-attr="monitor-file-api-error" 请勿修改或遗漏 --必填
+    2、查询符name表示你的项目名称 --必填
+    3、查询符allWrapId表示如果接口异常（网络错误）或资源加载失败时，你想在html上的id为allWrap的原生元素上 innerText 相应的文字 --非必填
+    4、查询符notMonitorDiffSiteResource 有值时表示 不监听跨域资源异常并刷新页面,默认监听跨域资源异常并刷新页面 --非必填
+    5、查询符notMonitorResource 有值时 表示监听到资源异常时（含同源及跨域资源）也不会刷新页面，默认监听到资源异常时会进行刷新页面 ---非必填
+    6、查询符errNoNotAlert 表示errno 不为0时是否进行alert弹窗，默认不弹窗---非必填
+    7、查询符notMonitorApi 有值时表示不监控api接口异常情况，默认监控---非必填
+    -->
+
+    <!--引入反馈网页问题样式-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/have-not-BUG/cdn/reprot-response-width-lr-pc-min-24f205d74e.css">
+    <!--在以下的css文件中编写你的css-->
+    <link rel="stylesheet" href="./css/{{fileName}}.css">
+
+
+</head>
+<body>
+<div id="allWrap">
+    欢迎使用模板
+</div>
+</body>
+{{#if isInjectJQ}}
+<script src="js/notchange/jQuery.v1.12.4.js"></script>
+{{/if}}
+ <!--引入反馈网页问题js-->
+<script src="https://cdn.jsdelivr.net/gh/have-not-BUG/cdn/reportself.js?name={{projectName}}&apikey={{apikey}}&notStorageKeys=storage1,storage1&right=true"  data-attr="licai-reportself"></script>
+<!--说明
+1、data-attr="licai-reportself" 请勿修改或遗漏 --必填
+2、查询符name表示你的项目名称 --必填
+3、查询符notStorageKeys表示你不想传递给后台的localStorage及sessionStorage的key值，支持多个，中间用英文, 分隔 --非必填
+4、查询符right 有值表示 网页问题反馈标志在右边 否则在左边 -- 非必填
+-->
+<!--在以下的js文件中编写你的js-->
+<script src="./js/{{fileName}}.js"></script>
+{{#if isInjectJQ}}
+<script>
+    // 检测是否缺少必要资源并进行提示
+    (function testNecessaryResource() {
+        try{
+            if (!jQuery || !window.licaiMessageBox) {
+                alert('缺少必要资源,请退出重试或退出切换网络重试1');
+                document.getElementById('allWrap').innerText='加载资源出现网络错误,请退出重试或退出并切换网络重试1';
+
+            } else {
+                window.licaiMessageBox.tips({
+                    message:'正在加载资源，请勿操作哦~',
+                    time:9999999, // 毫秒,
+                    isHide:false // 是否隐藏 默认否 可不填
+                })
+            }
+        }catch (error) {
+            // 资源挂了
+            alert('缺少必要资源,请退出重试或退出切换网络重试2');
+            document.getElementById('allWrap').innerText='加载资源出现网络错误,请退出重试或退出并切换网络重试2';
+
+        }
+
+    }());
+</script>
+{{else}}
+<script>
+    // 检测是否缺少必要资源并进行提示
+    (function testNecessaryResource() {
+        try{
+            if (!window.licaiMessageBox) {
+                alert('缺少必要资源,请退出重试或退出切换网络重试1');
+                document.getElementById('allWrap').innerText='加载资源出现网络错误,请退出重试或退出并切换网络重试1';
+
+            } else {
+                window.licaiMessageBox.tips({
+                    message:'正在加载资源，请勿操作哦~',
+                    time:9999999, // 毫秒,
+                    isHide:false // 是否隐藏 默认否 可不填
+                })
+            }
+        }catch (error) {
+            // 资源挂了
+            alert('缺少必要资源,请退出重试或退出切换网络重试2');
+            document.getElementById('allWrap').innerText='加载资源出现网络错误,请退出重试或退出并切换网络重试2';
+
+        }
+
+    }());
+</script>
+{{/if}}
+
+
+</html>
