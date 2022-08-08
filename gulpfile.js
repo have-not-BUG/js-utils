@@ -3,7 +3,7 @@ var gulp = require('gulp');
 var del = require('del');
 var connect = require('gulp-connect');
 var jsdoc = require('gulp-jsdoc3');
-var runJs = require('runjs');
+var {run} = require('runjs');
 
 /* Demo paths */
 var SRC_DIR_PATH = path.join(__dirname, 'src');
@@ -69,12 +69,16 @@ gulp.task('watch', ['src'] ,function() {
 
     watcher.on('change', function (event) {
         console.log('文件变化了====',event)
+        var changedFilePath=event.path;
+        var changedTestFileNameWithSprit=changedFilePath.split('__tests__')[1];
+        var changedTestFileName=changedTestFileNameWithSprit ? changedTestFileNameWithSprit.replace(/\//,'').replace(/\\/,'') :'';
         // 文件变化了==== { type: 'changed',
         //   path: 'D:\\1测试demo\\js-utils\\src\\__tests__\\deepClone.spec.js' }
-        console.log('File: ' + event.path + ' was ' + event.type + ', running tasks...');
+        console.log('File: ' + changedFilePath + ' was ' + event.type + ', running tasks...');
         // File: D:\1测试demo\js-utils\src\__tests__\deepClone.spec.js was changed, running tasks...
-        if(event.type ==='changed'){
-            runJs('npm run jest')
+
+        if(event.type ==='changed' && changedTestFileName){
+            run('npm run jest ' +changedTestFileName)
 
         }
     });

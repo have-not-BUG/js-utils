@@ -13,8 +13,13 @@ function judgeType(obj) {
         '[object Null]': 'null',
         '[object Object]': 'object',
     };
-    const Element=Element?Element:function Element () {
+    // const Element=Element?Element:function Element () {
 
+    // }
+    if(!Element){
+        Element=function Element () {
+
+        }
     }
     if (obj instanceof Element) {
         return 'element';
