@@ -119,6 +119,12 @@ console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8
 
 # 四、如何维护该项目
 
+### （零） 环境要求
+1、因本项目采用的单元测试为 jest v28.1.3，其要求Node12.21.0及以上版本，否则Node v11会报`globalThis is not defined`错误，Node v12.1 会报 modernFakeTimers.js:181里的 `fakeTimersConfig.timerLimit || 100_000`错误，因此如果要运行本项目的单元测试时需要Node 12.21.0版本及以上；
+2、由于本项目中gulp版本为3.9.1，其与Node 12不兼容，如果在Node 12直接运行 `npm run dev` 会报`primordials is not defined` 错误，因此本项目使用了`npm-force-resolutions` npm包进行解决；如果发现出现该错误，建议删除`node_modules`文件夹 重新安装npm包；
+
+
+
 ### （一） 一定用到的方法
 1、使用`gulp serve`或者`npm run dev` 指令启动文档服务 （支持热更新，会在项目根目录生成hotupdate目录）
 
@@ -144,13 +150,11 @@ console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8
 
 3、使用`npm run build:npmdev` 打包项目未压缩的npm文件（会在项目根目录生成npm目录）
 
+4、不推荐----使用`npm run test:use` 通过`nodemon`调用未压缩的npm文件 `npm/cjs/index.js` ，可以编辑`npm/cjs/index.js`文件 实时测试/调试各个函数的运行效果
 
-
-
-6、不推荐----使用`npm run test:use` 通过`nodemon`调用未压缩的npm文件 `npm/cjs/index.js` ，可以编辑`npm/cjs/index.js`文件 实时测试/调试各个函数的运行效果
-
-
-
+### （三） 单元测试
+1、使用`npm run jest` 跑整个单元测试
+2、使用`npm run jest 方法名` 跑某个方法的单元测试，如`npm run deepClone`
 
 
 
@@ -165,7 +169,7 @@ console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8
 
 ~~5、补充docs主页网址及截图~~
 
-6、添加单元测试
+6、添加更多的单元测试
 
 # 六、参考资料
 1、[imondo/js-utils](https://github.com/imondo/js-utils) 
