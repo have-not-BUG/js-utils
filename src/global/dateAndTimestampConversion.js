@@ -1,0 +1,31 @@
+/**
+ * 时间戳和日期相互转换
+ * @param {number|string}  time 时间戳或日期（日期示例:2022-08-10或者2022/08/10 16:37:51）
+ * @param {boolean} isDisplayDate  是否仅展示年月日 默认true
+ * @returns {string|number}
+ * @example
+ * dateAndTimestampConversion(1660120671762) // '2022-08-10'
+ * dateAndTimestampConversion(1660120671762,false) // '2022-08-10 16:37:51'
+ * dateAndTimestampConversion('2022-08-10 16:37:51') // 1660120671000
+ * dateAndTimestampConversion('2022/08/10 16:37:51') // 1660120671000
+ */
+ function dateAndTimestampConversion(time, isDisplayDate = true) {
+    if (String(time).includes('-') || String(time).includes('/')) {
+        const timeTransition=time.replace(/[-]/g,'/')
+        return new Date(timeTransition).getTime()
+    } else {
+        const now = new Date(String(time).length < 11 ? Number(time) * 1000 : Number(time))
+        const year = now.getFullYear()
+        const month = (now.getMonth() + 1).toString().padStart(2, '0')
+        const date = now.getDate().toString().padStart(2, '0')
+        const hours = now.getHours().toString().padStart(2, '0')
+        const minutes = now.getMinutes().toString().padStart(2, '0')
+        const second = now.getSeconds().toString().padStart(2, '0')
+        if (isDisplayDate) {
+            return `${year}-${month}-${date}`
+        } else {
+            return `${year}-${month}-${date} ${hours}:${minutes}:${second}`
+        }
+    }
+}
+export default dateAndTimestampConversion
