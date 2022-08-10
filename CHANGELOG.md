@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/have-not-BUG/js-utils/compare/v2.0.0...v2.1.0) (2022-08-10)
+
+
+### Features
+
+* 1、提交代码前运行覆盖率测试 2、新增时间戳与日期相互转换的函数及单元测试 ([2dc03ed](https://github.com/have-not-BUG/js-utils/commit/2dc03ed9a15cf82e27b71858c3e4fa5726342a24))
+* 1、重写数组对比方法及测试用例 2、支持测试失败后继续执行测试用例 ([e4a636d](https://github.com/have-not-BUG/js-utils/commit/e4a636da8807866bd4682a061a683bc3185577cf))
+* 移除覆盖率测试文件 ([101fb28](https://github.com/have-not-BUG/js-utils/commit/101fb28facee2356ba2e1e2baf89a123a14cf6d0))
+
+
+### Bug Fixes
+
+* 深拷贝新增Element相关测试用例 ([b3ff9b4](https://github.com/have-not-BUG/js-utils/commit/b3ff9b4036433e84f281748e76030ae3f58693f9))
+
 ## [2.0.0](https://github.com/have-not-BUG/js-utils/compare/v1.5.0...v2.0.0) (2022-08-09)
 
 
