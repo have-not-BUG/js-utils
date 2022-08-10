@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>removeArrRepeat.js - 函数工具库</title>
+    <title>dateAndTimestampConversion.js - 函数工具库</title>
     
     <meta name="description" content="日常 JavaScript  函数工具库，方便查看" />
     
@@ -40,7 +40,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">removeArrRepeat.js</h1>
+    <h1 class="page-title">dateAndTimestampConversion.js</h1>
     
 
     
@@ -51,16 +51,36 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * 数组去重
- * @param arr {Array} 需要去重的数组
- * @returns {Array} 去重后的数组
- * @example removeArrRepeat([1,2,2,3]) =>[1,2,3]
+ * 时间戳和日期相互转换
+ * @param {number|string}  time 时间戳或日期（日期示例:2022-08-10或者2022/08/10 16:37:51）
+ * @param {boolean} isDisplayDate  是否仅展示年月日 默认true
+ * @returns {string|number}
+ * @example
+ * dateAndTimestampConversion(1660120671762) // '2022-08-10'
+ * dateAndTimestampConversion(1660120671762,false) // '2022-08-10 16:37:51'
+ * dateAndTimestampConversion('2022-08-10 16:37:51') // 1660120671000
+ * dateAndTimestampConversion('2022/08/10 16:37:51') // 1660120671000
  */
-export default function removeArrRepeat(arr) {
-    return Array.from(new Set(arr));
+ function dateAndTimestampConversion(time, isDisplayDate = true) {
+    if (String(time).includes('-') || String(time).includes('/')) {
+        const timeTransition=time.replace(/[-]/g,'/')
+        return new Date(timeTransition).getTime()
+    } else {
+        const now = new Date(String(time).length &lt; 11 ? Number(time) * 1000 : Number(time))
+        const year = now.getFullYear()
+        const month = (now.getMonth() + 1).toString().padStart(2, '0')
+        const date = now.getDate().toString().padStart(2, '0')
+        const hours = now.getHours().toString().padStart(2, '0')
+        const minutes = now.getMinutes().toString().padStart(2, '0')
+        const second = now.getSeconds().toString().padStart(2, '0')
+        if (isDisplayDate) {
+            return `${year}-${month}-${date}`
+        } else {
+            return `${year}-${month}-${date} ${hours}:${minutes}:${second}`
+        }
+    }
 }
-
-// console.log('removeArrRepeat',removeArrRepeat([1,2,3,3,4]))
+export default dateAndTimestampConversion
 </code></pre>
         </article>
     </section>
