@@ -90,8 +90,8 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,ts}": [
-      "jest:coverage"
+    "src/__tests__/*.{js,ts}": [
+      "jest --coverage"
     ]
   },
   "resolutions": {

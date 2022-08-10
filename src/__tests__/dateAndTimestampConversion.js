@@ -4,6 +4,9 @@ describe('dateAndTimestampConversion 方法测试', () => {
   test('传时间戳展示年月日', () => {
     expect(dateAndTimestampConversion(1660120671762)).toBe('2022-08-10')
   })
+  test('传后端时间戳展示年月日', () => {
+    expect(dateAndTimestampConversion(1660120671)).toBe('2022-08-10')
+  })
   test('传时间戳展示年月日时分秒', () => {
     expect(dateAndTimestampConversion(1660120671762,false)).toBe('2022-08-10 16:37:51')
   })

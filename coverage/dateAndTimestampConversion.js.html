@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for formatCurrency.js</title>
+    <title>Code coverage report for dateAndTimestampConversion.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> formatCurrency.js</h1>
+        <h1><a href="index.html">All files</a> dateAndTimestampConversion.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">88.88% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/17</span>
+                <span class='fraction'>8/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -88,7 +88,13 @@
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -99,53 +105,65 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
- * @description 数值货币型转换
- * @param {String|Number} value  金额
- * @param {String} currency 货币符号 默认空
- * @param {String} decimals  保留位数 默认2位
- * @return {String} 货币型的字符
- * 
+ * 时间戳和日期相互转换
+ * @param {number|string}  time 时间戳或日期（日期示例:2022-08-10或者2022/08/10 16:37:51）
+ * @param {boolean} isDisplayDate  是否仅展示年月日 默认true
+ * @returns {string|number}
  * @example
- * formatCurrency(12333.514, '$', 2) =&gt; $12,333.51
+ * dateAndTimestampConversion(1660120671762) // '2022-08-10'
+ * dateAndTimestampConversion(1660120671762,false) // '2022-08-10 16:37:51'
+ * dateAndTimestampConversion('2022-08-10 16:37:51') // 1660120671000
+ * dateAndTimestampConversion('2022/08/10 16:37:51') // 1660120671000
  */
-function <span class="fstat-no" title="function not covered" >formatCurrency(</span>value, currency = <span class="branch-0 cbranch-no" title="branch not covered" >'',</span> decimals = <span class="branch-0 cbranch-no" title="branch not covered" >2)</span> {
-<span class="cstat-no" title="statement not covered" >  value = parseFloat(value);</span>
-<span class="cstat-no" title="statement not covered" >  if (!isFinite(value) || (!value &amp;&amp; value !== 0)) <span class="cstat-no" title="statement not covered" >return '';</span></span>
-  const digitsRE = <span class="cstat-no" title="statement not covered" >/(\d{3})(?=\d)/g;</span>
-  const stringified = <span class="cstat-no" title="statement not covered" >Math.abs(value).toFixed(decimals);</span>
-  const _int = <span class="cstat-no" title="statement not covered" >decimals ? stringified.slice(0, -1 - decimals) : stringified;</span>
-  const i = <span class="cstat-no" title="statement not covered" >_int.length % 3;</span>
-  const head = <span class="cstat-no" title="statement not covered" >i &gt; 0 ? _int.slice(0, i) + (_int.length &gt; 3 ? ',' : '') : '';</span>
-  const _float = <span class="cstat-no" title="statement not covered" >decimals ? stringified.slice(-1 - decimals) : '';</span>
-  const sign = <span class="cstat-no" title="statement not covered" >value &lt; 0 ? '-' : '';</span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-    sign + currency + head + _int.slice(i).replace(digitsRE, '$1,') + _float
-  );
+ function dateAndTimestampConversion(time, isDisplayDate = true) {
+    if (String(time).includes('-') || String(time).includes('/')) {
+        const timeTransition=time.replace(/[-]/g,'/')
+        return new Date(timeTransition).getTime()
+    } else {
+        const now = new Date(String(time).length &lt; 11 ? <span class="branch-0 cbranch-no" title="branch not covered" >Number(time) * 1000 </span>: Number(time))
+        const year = now.getFullYear()
+        const month = (now.getMonth() + 1).toString().padStart(2, '0')
+        const date = now.getDate().toString().padStart(2, '0')
+        const hours = now.getHours().toString().padStart(2, '0')
+        const minutes = now.getMinutes().toString().padStart(2, '0')
+        const second = now.getSeconds().toString().padStart(2, '0')
+        if (isDisplayDate) {
+            return `${year}-${month}-${date}`
+        } else {
+            return `${year}-${month}-${date} ${hours}:${minutes}:${second}`
+        }
+    }
 }
-&nbsp;
-export default formatCurrency;</pre></td></tr></table></pre>
+export default dateAndTimestampConversion
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-08-10T09:30:27.833Z
+                at 2022-08-10T09:30:27.657Z
             </div>
         <script src="prettify.js"></script>
         <script>
