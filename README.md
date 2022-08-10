@@ -153,7 +153,10 @@ console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8
 4、不推荐----使用`npm run test:use` 通过`nodemon`调用未压缩的npm文件 `npm/cjs/index.js` ，可以编辑`npm/cjs/index.js`文件 实时测试/调试各个函数的运行效果
 
 ### （三） 单元测试
+0、在`src/__test__`目录下新建单元测试文件，并编写单元测试，可以使用`npm run dev:jest` 指令可实时运行单测结果
+
 1、使用`npm run jest` 跑整个单元测试
+
 2、使用`npm run jest 方法名` 跑某个方法的单元测试，如`npm run deepClone`
 
 
