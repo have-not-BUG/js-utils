@@ -6,9 +6,9 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
-    branches: [ "master" ]
+    branches: [ "unit-test" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "unit-test" ]
 
   # Allows you to run this workflow manually from the Actions tab
  # workflow_dispatch:
@@ -36,8 +36,8 @@ jobs:
          npm run build:doc --if-present
       - name: Deploy
       	# 将构建产物 commit 到一个分支上，用于发布静态站点资源
-      	# https://github.com/have-not-BUG/js-utils
-        uses: have-not-BUG/js-utils@v3
+      	# https://github.com/peaceiris/actions-gh-pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
           # Github 会在 workflow 中自动生成 GIHUBT_TOKEN，用于认证 workflow 的运行
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -48,8 +48,8 @@ jobs:
           full_commit_message: ${{ github.event.head_commit.message }}
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+     # - name: Run a multi-line script
+      #  run: |
+       #   echo Add other actions to build,
+        #  echo test, and deploy your project.
         
