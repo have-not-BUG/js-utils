@@ -32,7 +32,8 @@ jobs:
       - name: npm install, build and test
         run: |
          npm install
-         npm run test
+         npm run jest
+         npm run jest:coverage
          npm run build:doc --if-present
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
