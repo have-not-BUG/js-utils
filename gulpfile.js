@@ -4,7 +4,9 @@ var del = require('del');
 var connect = require('gulp-connect');
 var jsdoc = require('gulp-jsdoc3');
 var {run} = require('runjs');
-
+var minimist = require('minimist');
+var isReloadJestType= minimist(process.argv)['t'] === 'reloadJest';
+// console.log('process.env.PORT',process.env.PORT)
 /* Demo paths */
 var SRC_DIR_PATH = path.join(__dirname, 'src');
 var SRC_DIR_TEMPLATE_PATH = __dirname;
@@ -70,17 +72,17 @@ gulp.task('watch', ['src'] ,function() {
     watcher.on('change', function (event) {
         console.log('文件变化了====',event)
         var changedFilePath=event.path;
-        // var changedTestFileNameWithSprit=changedFilePath.split('__tests__')[1];
-        // var changedTestFileName=changedTestFileNameWithSprit ? changedTestFileNameWithSprit.replace(/\//,'').replace(/\\/,'') :'';
+        var changedTestFileNameWithSprit=changedFilePath.split('__tests__')[1];
+        var changedTestFileName=changedTestFileNameWithSprit ? changedTestFileNameWithSprit.replace(/\//,'').replace(/\\/,'') :'';
         // 文件变化了==== { type: 'changed',
         //   path: 'D:\\1测试demo\\js-utils\\src\\__tests__\\deepClone.spec.js' }
         console.log('File: ' + changedFilePath + ' was ' + event.type + ', running tasks...');
         // File: D:\1测试demo\js-utils\src\__tests__\deepClone.spec.js was changed, running tasks...
 
-        // if(event.type ==='changed' && changedTestFileName){
-        //     run('npm run jest ' +changedTestFileName)
-        //
-        // }
+        if(isReloadJestType && event.type ==='changed' && changedTestFileName){
+            run('npm run jest:watch ' +changedTestFileName)
+
+        }
     });
 });
 
@@ -90,7 +92,8 @@ gulp.task('watch', ['src'] ,function() {
 gulp.task('connect', ['src'], function() {
     connect.server({
         root: SRC_DIR_DESTINATION_PATH,
-        livereload: true
+        livereload: true,
+        port:isReloadJestType ? 8888:8080
     });
 });
 

@@ -60,4 +60,11 @@ describe('deepClone 方法测试', () => {
     expect(copyedData).toEqual({"names":'name发生变化了','info':{'age1':21,'age2':22,arr:['a',{name:'dd'},[1,2,3]]}})
   })
 
+  test('Element类型拷贝后保证相等', () => {
+    const originData =Element
+    const copyedData  = deepClone(originData)
+    expect(copyedData).toBe(Element)
+    expect(originData).toBe(Element)
+  })
+
 })

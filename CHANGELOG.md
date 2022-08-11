@@ -2,6 +2,42 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/have-not-BUG/js-utils/compare/v2.0.0...v2.1.0) (2022-08-10)
+
+
+### Features
+
+* 1、提交代码前运行覆盖率测试 2、新增时间戳与日期相互转换的函数及单元测试 ([2dc03ed](https://github.com/have-not-BUG/js-utils/commit/2dc03ed9a15cf82e27b71858c3e4fa5726342a24))
+* 1、重写数组对比方法及测试用例 2、支持测试失败后继续执行测试用例 ([e4a636d](https://github.com/have-not-BUG/js-utils/commit/e4a636da8807866bd4682a061a683bc3185577cf))
+* 移除覆盖率测试文件 ([101fb28](https://github.com/have-not-BUG/js-utils/commit/101fb28facee2356ba2e1e2baf89a123a14cf6d0))
+
+
+### Bug Fixes
+
+* 深拷贝新增Element相关测试用例 ([b3ff9b4](https://github.com/have-not-BUG/js-utils/commit/b3ff9b4036433e84f281748e76030ae3f58693f9))
+
+## [2.0.0](https://github.com/have-not-BUG/js-utils/compare/v1.5.0...v2.0.0) (2022-08-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* npm支持未压缩版本
+
+### Features
+
+* 1、node12可支持gulp3.9.1 2、变更测试文件自动运行测试 3、完成deeepClone单元测试 ([69e97a4](https://github.com/have-not-BUG/js-utils/commit/69e97a48a77cd2a7ee6859e5261a60d094c260a5))
+* 1、注释自动运行单元测试代码 2、完善运行环境说明 ([cd79af4](https://github.com/have-not-BUG/js-utils/commit/cd79af45c1028354651e848a938467bf86141b76))
+* 单元测试优化 ([d76ad34](https://github.com/have-not-BUG/js-utils/commit/d76ad342e76d0781183ecaa440243d4689283ae8))
+* 完善数组相等及深拷贝方法及相应的单元测试 ([ef2411b](https://github.com/have-not-BUG/js-utils/commit/ef2411b6725493add27fcc5bda4fbbcb0350b121))
+
+
+### Bug Fixes
+
+* 移除误粘贴文件夹 ([ebc5fa5](https://github.com/have-not-BUG/js-utils/commit/ebc5fa554d86cca027b40a1c3f9da7c64cbe8f90))
+
+
+* Merge pull request #35 from have-not-BUG/feat-支持sourcemap ([5b98d47](https://github.com/have-not-BUG/js-utils/commit/5b98d47da42320f89dc0ec22b3618ed40d7b8982)), closes [#35](https://github.com/have-not-BUG/js-utils/issues/35)
+
 ## [1.5.0](https://github.com/have-not-BUG/js-utils/compare/v1.4.3...v1.5.0) (2021-10-14)
 
 
