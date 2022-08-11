@@ -4,6 +4,7 @@ node_modules
 /hotupdate
 /npm
 /coverage
+/docs
 
 # local env files
 .env.local

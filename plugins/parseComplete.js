@@ -14,8 +14,8 @@ exports.handlers = {
             .then(() => console.log(`从${originFilesAndDir}复制至${hotupdateFilesAndDir}成功！`))
             .catch(err => console.error(`从${originFilesAndDir}复制至${hotupdateFilesAndDir}失败！，原因为${err}`))
 
-        fse.copy(originFilesAndDir, docsFilesAndDir)
-            .then(() => console.log(`从${originFilesAndDir}复制至${docsFilesAndDir}成功！`))
-            .catch(err => console.error(`从${originFilesAndDir}复制至${docsFilesAndDir}失败！，原因为${err}`))
+        // fse.copy(originFilesAndDir, docsFilesAndDir)
+        //     .then(() => console.log(`从${originFilesAndDir}复制至${docsFilesAndDir}成功！`))
+        //     .catch(err => console.error(`从${originFilesAndDir}复制至${docsFilesAndDir}失败！，原因为${err}`))
     }
 };
