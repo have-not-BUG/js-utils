@@ -1,4 +1,4 @@
-var browserify = require('browserify');
+const browserify = require('browserify');
 const fs = require('fs')
 
 
@@ -16,7 +16,7 @@ export default function cjsToBrowserify () {
             console.log('`${__dirname}/${writeBundleObj.dir}/index.js`',`${__dirname}/${writeBundleObj.dir}/index.js`)
             if(writeBundleObj.format === 'cjs'){
                 browserify({ entries: [`${__dirname}/${writeBundleObj.dir}/index.js`] }).bundle(function (err,buf) {
-                    // console.log('======err,buf======',err,buf)
+                    console.log('browserify运行出错了err：',err)
                     fs.writeFileSync(`${__dirname}/npm/index.js`,buf)
 
 
