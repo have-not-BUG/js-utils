@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>digitUppercase.js - 函数工具库</title>
+    
+    <meta name="description" content="日常 JavaScript  函数工具库，方便查看" />
+    
+        <meta name="keywords" content="javaScript, utils, jsdoc" />
+        <meta name="keyword" content="javaScript, utils, jsdoc" />
+    
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h2><a href="https://github.com/have-not-BUG/js-utils" class="menu-item" id="website_link" >GitHub</a></h2><h3>Global</h3><ul><li><a href="global.html#arrayEqual">arrayEqual</a></li><li><a href="global.html#browserInfo">browserInfo</a></li><li><a href="global.html#byteLength">byteLength</a></li><li><a href="global.html#dateAndTimestampConversion">dateAndTimestampConversion</a></li><li><a href="global.html#debounce">debounce</a></li><li><a href="global.html#deepClone">deepClone</a></li><li><a href="global.html#digitUppercase">digitUppercase</a></li><li><a href="global.html#floatObj">floatObj</a></li><li><a href="global.html#formatCurrency">formatCurrency</a></li><li><a href="global.html#formatNumberZero">formatNumberZero</a></li><li><a href="global.html#formatTime">formatTime</a></li><li><a href="global.html#getDaysInOneMonth">getDaysInOneMonth</a></li><li><a href="global.html#getNowDate">getNowDate</a></li><li><a href="global.html#getObjVal">getObjVal</a></li><li><a href="global.html#getRemovedQueryStringInUrl">getRemovedQueryStringInUrl</a></li><li><a href="global.html#getSearchParam">getSearchParam</a></li><li><a href="global.html#isInteger">isInteger</a></li><li><a href="global.html#isWechatBrowser">isWechatBrowser</a></li><li><a href="global.html#lotteryRandom">lotteryRandom</a></li><li><a href="global.html#paramToObj">paramToObj</a></li><li><a href="global.html#scrollAnimation">scrollAnimation</a></li><li><a href="global.html#sequenceParam">sequenceParam</a></li><li><a href="global.html#thousandthPlace">thousandthPlace</a></li><li><a href="global.html#throttle">throttle</a></li><li><a href="global.html#toFixed">toFixed</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">digitUppercase.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @description 人民币小写金额转换为大写
+ * @param {String/number} n 金额
+ * @return 大写金额
+ * @example
+ * digitUppercase(123456789)
+ * "壹亿贰仟叁佰肆拾伍万陆仟柒佰捌拾玖元整"
+ * digitUppercase(12.12)
+ * "壹拾贰元壹角贰分"
+ */
+function digitUppercase(n){
+    const fraction = ['角', '分']
+    const digit = [
+        '零', '壹', '贰', '叁', '肆',
+        '伍', '陆', '柒', '捌', '玖'
+    ]
+    const unit = [
+        ['元', '万', '亿'],
+        ['', '拾', '佰', '仟']
+    ]
+    const head = n &lt; 0 ? '欠' : ''
+    n = Math.abs(n)
+    let s = ''
+    for (let i = 0; i &lt; fraction.length; i++) {
+        s += (digit[Math.floor(Math.floor(n * 1000 * 10 * Math.pow(10, i)) % (10 * 1000) / 1000)] + fraction[i]).replace(/零./, '')
+    }
+    s = s || '整'
+    n = Math.floor(n)
+    for (let i = 0; i &lt; unit[0].length &amp;&amp; n > 0; i++) {
+        let p = ''
+        for (let j = 0; j &lt; unit[1].length &amp;&amp; n > 0; j++) {
+            p = digit[n % 10] + unit[1][j] + p
+            n = Math.floor(n / 10)
+        }
+        s = p.replace(/(零.)*零$/, '').replace(/^$/, '零') + unit[0][i] + s
+    }
+    return head + s.replace(/(零.)*零元/, '元')
+        .replace(/(零.)+/g, '零')
+        .replace(/^整$/, '零元整')
+}
+export default digitUppercase
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+
+    
+</div>
+
+<br class="clear">
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+<script type="module">
+    // 一、导入全部
+    import  * as jsUtilsLc  from './src/index.js'
+    window.jsUtilsLc=jsUtilsLc
+    console.log('如果想在控制台测试方法，可以在jsUtilsLc上找你想测试的方法',jsUtilsLc)
+</script>
+</body>
+</html>
