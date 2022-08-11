@@ -10,7 +10,9 @@
  * dateAndTimestampConversion('2022/08/10 16:37:51') // 1660120671000
  */
  function dateAndTimestampConversion(time, isDisplayDate = true) {
-     const timeType= Object.prototype.toString.call(time)
+    const nowDate= new Date();
+    const timezoneOffset=nowDate.getTimezoneOffset()*60*1000+28800000; // 中国东八区 -480 分钟 也就是 -28800000毫秒
+    const timeType= Object.prototype.toString.call(time)
     if(timeType !=='[object Number]' && timeType !=='[object String]'){
         throw new Error("参数应为数字或字符串类型")
     }
@@ -22,10 +24,10 @@
         throw new Error("日期位数应为10位数或19位数")
     }
     if (String(time).includes('-') || String(time).includes('/')) {
-        const timeTransition=time.replace(/[-]/g,'/')
-        return new Date(timeTransition).getTime()
+        const timeTransition=time.replace(/-/g,'/')
+        return (new Date(timeTransition).getTime())+timezoneOffset
     } else {
-        const now = new Date(String(time).length ===10 ? Number(time) * 1000 : Number(time))
+        const now = new Date(String(time).length ===10 ? (Number(time) * 1000) +timezoneOffset : Number(time)+timezoneOffset)
         const year = now.getFullYear()
         const month = (now.getMonth() + 1).toString().padStart(2, '0')
         const date = now.getDate().toString().padStart(2, '0')
