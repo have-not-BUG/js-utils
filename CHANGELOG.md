@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/have-not-BUG/js-utils/compare/v2.1.0...v2.2.0) (2022-08-11)
+
+
+### Features
+
+* 完善时间戳及日期相互转换函数及单元测试 ([432ee86](https://github.com/have-not-BUG/js-utils/commit/432ee863769c5f1d5a4f479635295d57a14a9598))
+
+
+### Bug Fixes
+
+* 1、修复时区问题导致日期函数单测失败问题 2、移除docs本地生成程序 ([ff10f85](https://github.com/have-not-BUG/js-utils/commit/ff10f852a08ade4c9e43117406ef6b36015572db))
+* 修复时间戳位数描述错误及格式化 ([e6ae486](https://github.com/have-not-BUG/js-utils/commit/e6ae486e5ee7a50911c637cd0b1d3ca0a4d1f595))
+
 ## [2.1.0](https://github.com/have-not-BUG/js-utils/compare/v2.0.0...v2.1.0) (2022-08-10)
 
 
