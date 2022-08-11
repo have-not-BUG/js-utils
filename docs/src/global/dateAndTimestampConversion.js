@@ -16,7 +16,7 @@
     }
     const isTimeTypeIsNum= timeType ==='[object Number]';
     if(isTimeTypeIsNum && String(time).length !==10 && String(time).length !==13){
-        throw new Error("时间戳位数应为11位数或8位数")
+        throw new Error("时间戳位数应为10位数或13位数")
     }
     if(!isTimeTypeIsNum && time.length !==10 && time.length !==19){
         throw new Error("日期位数应为10位数或19位数")

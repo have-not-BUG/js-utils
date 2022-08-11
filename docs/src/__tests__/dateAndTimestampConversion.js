@@ -4,7 +4,7 @@ describe('dateAndTimestampConversion 方法测试', () => {
   test('传时间戳展示年月日', () => {
     expect(dateAndTimestampConversion(1660120671762)).toBe('2022-08-10')
   })
-  test('传8位时间戳展示年月日', () => {
+  test('传10位时间戳展示年月日', () => {
     expect(dateAndTimestampConversion(1660120671)).toBe('2022-08-10')
   })
   test('传时间戳展示年月日时分秒', () => {
@@ -29,11 +29,11 @@ describe('dateAndTimestampConversion 方法测试', () => {
   test('日期字符串长度应为10或19位数', () => {
     expect(() => dateAndTimestampConversion('2022/08/100')).toThrow('日期位数应为10位数或19位数')
   })
-  test('时间戳位数应为11位数或8位数', () => {
-    expect(() => dateAndTimestampConversion(16600608000000)).toThrow('时间戳位数应为11位数或8位数')
+  test('时间戳位数应为10位数或13位数', () => {
+    expect(() => dateAndTimestampConversion(16600608000000)).toThrow('时间戳位数应为10位数或13位数')
   })
-  test('时间戳位数应为11位数或8位数', () => {
-    expect(() => dateAndTimestampConversion(166006080)).toThrow('时间戳位数应为11位数或8位数')
+  test('时间戳位数应为10位数或13位数', () => {
+    expect(() => dateAndTimestampConversion(166006080)).toThrow('时间戳位数应为10位数或13位数')
   })
   test('参数应为数字或字符串类型', () => {
     expect(() => dateAndTimestampConversion(new Date())).toThrow('参数应为数字或字符串类型')

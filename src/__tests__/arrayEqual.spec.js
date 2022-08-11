@@ -110,10 +110,4 @@ describe('arrayEqual 方法测试', () => {
     const arr2 = null;
     expect(() => arrayEqual(arr1, arr2)).toThrow('参数不为数组，无法比较');
   })
-
-
-
-
-
-
 })

@@ -33,18 +33,13 @@ function arrayEqual(arr1, arr2) {
                     return false
                 }
             }
-
         }else{
-           if( arr1Sort[i] !==arr2Sort[i]){
+           if(arr1Sort[i] !==arr2Sort[i]){
                return false
            }
         }
-
     }
-
     return true
-
-
 }
 
 export default arrayEqual

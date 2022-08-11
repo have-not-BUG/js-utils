@@ -159,7 +159,7 @@ console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8
 
 2、使用`npm run jest 方法名` 跑某个方法的单元测试，如`npm run deepClone`
 
-
+3、使用`npm run jest:coverage` 跑覆盖率测试
 
 # 五、待完成
 ~~1、支持方便地在浏览器控制台实时测试/调试各个函数的运行效果~~
