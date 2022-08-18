@@ -1,10 +1,10 @@
 /**
- * @description 数值货币型转换
+ * @description 数值货币型转换并加千分符
  * @param {String|Number} value  金额
  * @param {String} currency 货币符号 默认空
  * @param {String} decimals  保留位数 默认2位
  * @return {String} 货币型的字符
- * 
+ *
  * @example
  * formatCurrency(12333.514, '$', 2) => $12,333.51
  */
