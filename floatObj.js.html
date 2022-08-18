@@ -51,93 +51,262 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * 浮点数的加减乘除，解决浮点数问题
- * @return {{chu: (function(*=, *=, *=): *|null|string), jia: (function(*=, *=, *=): *|null|string), cheng: (function(*=, *=, *=): *|null|string), jian: (function(*=, *=, *=): *|null|string)}}
- @example console.log(floatObj().jia(0.1,0.2))  // 0.3
+ * 浮点数的加减乘除，解决浮点数问题(如果运算数值比较大，建议使用decimal.js库)
+ * @return {{divide: (function(*=, *=, *=): *|null|string), plus: (function(*=, *=, *=): *|null|string), times: (function(*=, *=, *=): *|null|string), minus: (function(*=, *=, *=): *|null|string)}}
+ @example console.log(floatObj().plus(0.1,0.2))  // 0.3
+ @example console.log(floatObj().times(19.9,100))  // 1990
  */
 function floatObj() {
-    function isInteger(obj) {
-        return Math.floor(obj) === obj
-    }
+// //     // 参考 https://zhuanlan.zhihu.com/p/33333351
+//     var plus = function(num1, num2) {
+//         num1 = Number(num1);
+//         num2 = Number(num2);
+//         var dec1, dec2, times1;
+//         try { dec1 = countDecimals(num1)+1; } catch (e) { dec1 = 0; }
+//         try { dec2 = countDecimals(num2)+1; } catch (e) { dec2 = 0; }
+//         times1 = Math.pow(10, Math.max(dec1, dec2));
+//         var result = (times(num1, times1) + times(num2, times1)) / times1;
+//         return getCorrectResult("add", num1, num2, result);
+//         // return result;
+//     };
+//
+//     var minus = function(num1, num2) {
+//         num1 = Number(num1);
+//         num2 = Number(num2);
+//         var dec1, dec2, times1;
+//         try { dec1 = countDecimals(num1)+1; } catch (e) { dec1 = 0; }
+//         try { dec2 = countDecimals(num2)+1; } catch (e) { dec2 = 0; }
+//         times1 = Math.pow(10, Math.max(dec1, dec2));
+//         var result = Number((times(num1, times1) - times(num2, times1)) / times1);
+//         return getCorrectResult("sub", num1, num2, result);
+//         // return result;
+//     };
+//
+//     var divide = function(num1, num2) {
+//         num1 = Number(num1);
+//         num2 = Number(num2);
+//         var t1 = 0, t2 = 0, dec1, dec2;
+//         try { t1 = countDecimals(num1); } catch (e) { }
+//         try { t2 = countDecimals(num2); } catch (e) { }
+//         dec1 = convertToInt(num1);
+//         dec2 = convertToInt(num2);
+//         var result = times((dec1 / dec2), Math.pow(10, t2 - t1));
+//         return getCorrectResult("div", num1, num2, result);
+//         // return result;
+//     };
+//
+//     var times = function(num1, num2) {
+//         num1 = Number(num1);
+//         num2 = Number(num2);
+//         var times1 = 0, s1 = num1.toString(), s2 = num2.toString();
+//         try { times1 += countDecimals(s1); } catch (e) { }
+//         try { times1 += countDecimals(s2); } catch (e) { }
+//         var result = convertToInt(s1) * convertToInt(s2) / Math.pow(10, times1);
+//         return getCorrectResult("mul", num1, num2, result);
+//         // return result;
+//     };
+// // 计算小数位的长度
+//     var countDecimals = function(num) {
+//         var len = 0;
+//         try {
+//             num = Number(num);
+//             var str = num.toString().toUpperCase();
+//             if (str.split('E').length === 2) { // scientific notation
+//                 var isDecimal = false;
+//                 if (str.split('.').length === 2) {
+//                     str = str.split('.')[1];
+//                     if (parseInt(str.split('E')[0]) !== 0) {
+//                         isDecimal = true;
+//                     }
+//                 }
+//                 let x = str.split('E');
+//                 if (isDecimal) {
+//                     len = x[0].length;
+//                 }
+//                 len -= parseInt(x[1]);
+//             } else if (str.split('.').length === 2) { // decimal
+//                 if (parseInt(str.split('.')[1]) !== 0) {
+//                     len = str.split('.')[1].length;
+//                 }
+//             }
+//         } catch(e) {
+//             throw e;
+//         } finally {
+//             if (isNaN(len) || len &lt; 0) {
+//                 len = 0;
+//             }
+//             return len;
+//         }
+//     };
+// // 将小数转成整数
+//     var convertToInt = function(num) {
+//         num = Number(num);
+//         var newNum = num;
+//         var times1 = countDecimals(num);
+//         var temp_num = num.toString().toUpperCase();
+//         if (temp_num.split('E').length === 2) {
+//             newNum = Math.round(num * Math.pow(10, times1));
+//         } else {
+//             newNum = Number(temp_num.replace(".", ""));
+//         }
+//         return newNum;
+//     };
+// // 确认我们的计算结果无误，以防万一
+//     var getCorrectResult = function(type, num1, num2, result) {
+//         var temp_result = 0;
+//         switch (type) {
+//             case "add":
+//                 temp_result = num1 + num2;
+//                 break;
+//             case "sub":
+//                 temp_result = num1 - num2;
+//                 break;
+//             case "div":
+//                 temp_result = num1 / num2;
+//                 break;
+//             case "mul":
+//                 temp_result = num1 * num2;
+//                 break;
+//         }
+//         if (Math.abs(result - temp_result) > 1) {
+//             return temp_result;
+//         }
+//         return result;
+//     };
 
-    function toInteger(floatNum) {
-        const ret = { times: 1, num: 0 }
-        if (isInteger(floatNum)) {
-            ret.num = floatNum
-            return ret
+
+// // 参考 https://github.com/nefe/number-precision
+    /**
+     * 精确乘法
+     */
+    function times() {
+        var nums = [];
+        for (var _i = 0; _i &lt; arguments.length; _i++) {
+            nums[_i] = arguments[_i];
         }
-        const strfi = `${floatNum}`
-        const dotPos = strfi.indexOf('.')
-        const len = strfi.substr(dotPos + 1).length
-        // eslint-disable-next-line
-        const times = Math.pow(10, len)
-        const intNum = Number(floatNum.toString().replace('.', ''))
-        ret.times = times
-        ret.num = intNum
-        return ret
+        if (nums.length > 2) {
+            return iteratorOperation(nums, times);
+        }
+        var num1 = nums[0], num2 = nums[1];
+        var num1Changed = float2Fixed(num1);
+        var num2Changed = float2Fixed(num2);
+        var baseNum = digitLength(num1) + digitLength(num2);
+        var leftValue = num1Changed * num2Changed;
+        checkBoundary(leftValue);
+        return leftValue / Math.pow(10, baseNum);
     }
-
-    function operation(a, b, digits, op) {
-        const o1 = toInteger(a)
-        const o2 = toInteger(b)
-        const n1 = o1.num
-        const n2 = o2.num
-        const t1 = o1.times
-        const t2 = o2.times
-        const max = t1 > t2 ? t1 : t2
-        let result = null
-        switch (op) {
-            case 'jia':
-                if (t1 === t2) { // 两个小数位数相同
-                    result = n1 + n2
-                } else if (t1 > t2) { // o1 小数位 大于 o2
-                    result = n1 + (n2 * (t1 / t2))
-                } else { // o1 小数位 小于 o2
-                    result = (n1 * (t2 / t1)) + n2
-                }
-                return result / max
-            case 'jian':
-                if (t1 === t2) {
-                    result = n1 - n2
-                } else if (t1 > t2) {
-                    result = n1 - (n2 * (t1 / t2))
-                } else {
-                    result = (n1 * (t2 / t1)) - n2
-                }
-                return result / max
-            case 'cheng':
-                result = (n1 * n2) / (t1 * t2)
-                return result
-            case 'chu':
-                result = (n1 / n2) * (t2 / t1)
-                return result
-            default:
-                return 'floatObj函数运行错误'
+    /**
+     * 精确加法
+     */
+    function plus() {
+        var nums = [];
+        for (var _i = 0; _i &lt; arguments.length; _i++) {
+            nums[_i] = arguments[_i];
+        }
+        if (nums.length > 2) {
+            return iteratorOperation(nums, plus);
+        }
+        var num1 = nums[0], num2 = nums[1];
+        // 取最大的小数位
+        var baseNum = Math.pow(10, Math.max(digitLength(num1), digitLength(num2)));
+        // 把小数都转为整数然后再计算
+        return (times(num1, baseNum) + times(num2, baseNum)) / baseNum;
+    }
+    /**
+     * 精确减法
+     */
+    function minus() {
+        var nums = [];
+        for (var _i = 0; _i &lt; arguments.length; _i++) {
+            nums[_i] = arguments[_i];
+        }
+        if (nums.length > 2) {
+            return iteratorOperation(nums, minus);
+        }
+        var num1 = nums[0], num2 = nums[1];
+        var baseNum = Math.pow(10, Math.max(digitLength(num1), digitLength(num2)));
+        return (times(num1, baseNum) - times(num2, baseNum)) / baseNum;
+    }
+    /**
+     * 精确除法
+     */
+    function divide() {
+        var nums = [];
+        for (var _i = 0; _i &lt; arguments.length; _i++) {
+            nums[_i] = arguments[_i];
+        }
+        if (nums.length > 2) {
+            return iteratorOperation(nums, divide);
+        }
+        var num1 = nums[0], num2 = nums[1];
+        var num1Changed = float2Fixed(num1);
+        var num2Changed = float2Fixed(num2);
+        checkBoundary(num1Changed);
+        checkBoundary(num2Changed);
+        // fix: 类似 10 ** -4 为 0.00009999999999999999，strip 修正
+        return times(num1Changed / num2Changed, strip(Math.pow(10, digitLength(num2) - digitLength(num1))));
+    }
+    /**
+     * 四舍五入
+     */
+    function round(num, ratio) {
+        var base = Math.pow(10, ratio);
+        var result = divide(Math.round(Math.abs(times(num, base))), base);
+        if (num &lt; 0 &amp;&amp; result !== 0) {
+            result = times(result, -1);
+        }
+        return result;
+    }
+    /**
+     * 迭代操作
+     */
+    function iteratorOperation(arr, operation) {
+        var num1 = arr[0], num2 = arr[1], others = arr.slice(2);
+        var res = operation(num1, num2);
+        others.forEach(function (num) {
+            res = operation(res, num);
+        });
+        return res;
+    }
+    var _boundaryCheckingState = true;
+    function checkBoundary(num) {
+        if (_boundaryCheckingState) {
+            if (num > Number.MAX_SAFE_INTEGER || num &lt; Number.MIN_SAFE_INTEGER) {
+                console.warn(num + " is beyond boundary when transfer to integer, the results may not be accurate");
+            }
         }
     }
-
-    function jia(a, b, digits) {
-        return operation(a, b, digits, 'jia')
+    /**
+     * 把错误的数据转正
+     * strip(0.09999999999999998)=0.1
+     */
+    function strip(num, precision) {
+        if (precision === void 0) { precision = 15; }
+        return +parseFloat(Number(num).toPrecision(precision));
     }
 
-    function jian(a, b, digits) {
-        return operation(a, b, digits, 'jian')
+    function digitLength(num) {
+        // Get digit length of e
+        var eSplit = num.toString().split(/[eE]/);
+        var len = (eSplit[0].split('.')[1] || '').length - +(eSplit[1] || 0);
+        return len > 0 ? len : 0;
     }
 
-    function cheng(a, b, digits) {
-        return operation(a, b, digits, 'cheng')
-    }
-
-    function chu(a, b, digits) {
-        return operation(a, b, digits, 'chu')
+    function float2Fixed(num) {
+        if (num.toString().indexOf('e') === -1) {
+            return Number(num.toString().replace('.', ''));
+        }
+        var dLen = digitLength(num);
+        return dLen > 0 ? strip(Number(num) * Math.pow(10, dLen)) : Number(num);
     }
 
     // exports
     return {
-        jia,
-        jian,
-        cheng,
-        chu,
+        plus,
+        minus,
+        times,
+        divide,
+        round
     }
 }
 export default floatObj
@@ -164,11 +333,18 @@ export default floatObj
 <script src="scripts/collapse.js" defer></script>
 
 
+<!--<script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/bignumber.js@9.1.0/bignumber.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/big.js@6.2.1/big.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/decimal.js@10.4.0/decimal.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/mathjs@11.0.1/lib/browser/math.min.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/number-precision@1.5.2/build/index.iife.js"></script>-->
+
 <script type="module">
     // 一、导入全部
     import  * as jsUtilsLc  from './src/index.js'
     window.jsUtilsLc=jsUtilsLc
-    console.log('如果想在控制台测试方法，可以在jsUtilsLc上找你想测试的方法',jsUtilsLc)
+    console.log('如果想在控制台测试方法，可以在jsUtilsLc上找你想测试的方法',jsUtilsLc);
 </script>
 </body>
 </html>

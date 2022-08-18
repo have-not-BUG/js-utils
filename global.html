@@ -1331,7 +1331,7 @@ digitUppercase(12.12)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="floatObj.js.html">floatObj.js</a>, <a href="floatObj.js.html#line6">line 6</a>
+        <a href="floatObj.js.html">floatObj.js</a>, <a href="floatObj.js.html#line7">line 7</a>
     </li></ul></dd>
     
 
@@ -1371,7 +1371,7 @@ digitUppercase(12.12)
 
 
 <div class="description usertext">
-    浮点数的加减乘除，解决浮点数问题
+    浮点数的加减乘除，解决浮点数问题(如果运算数值比较大，建议使用decimal.js库)
 </div>
 
 
@@ -1382,9 +1382,12 @@ digitUppercase(12.12)
 
 
 
-    <h5>Example</h5>
+    <h5>Examples</h5>
     
-    <pre class="prettyprint"><code>console.log(floatObj().jia(0.1,0.2))  // 0.3</code></pre>
+    <pre class="prettyprint"><code>console.log(floatObj().plus(0.1,0.2))  // 0.3
+ </code></pre>
+
+    <pre class="prettyprint"><code>console.log(floatObj().times(19.9,100))  // 1990</code></pre>
 
 
 
@@ -1481,7 +1484,7 @@ digitUppercase(12.12)
 
 
 <div class="description usertext">
-    数值货币型转换
+    数值货币型转换并加千分符
 </div>
 
 
@@ -4511,11 +4514,18 @@ toFixed('0.3358') => "0.34"  </code></pre>
 <script src="scripts/collapse.js" defer></script>
 
 
+<!--<script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/bignumber.js@9.1.0/bignumber.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/big.js@6.2.1/big.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/decimal.js@10.4.0/decimal.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/mathjs@11.0.1/lib/browser/math.min.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/number-precision@1.5.2/build/index.iife.js"></script>-->
+
 <script type="module">
     // 一、导入全部
     import  * as jsUtilsLc  from './src/index.js'
     window.jsUtilsLc=jsUtilsLc
-    console.log('如果想在控制台测试方法，可以在jsUtilsLc上找你想测试的方法',jsUtilsLc)
+    console.log('如果想在控制台测试方法，可以在jsUtilsLc上找你想测试的方法',jsUtilsLc);
 </script>
 </body>
 </html>
