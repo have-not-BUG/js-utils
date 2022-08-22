@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.3.0](https://github.com/have-not-BUG/js-utils/compare/v2.2.0...v2.3.0) (2022-08-22)
+
+
+### Features
+
+* 完善toFixed方法及单元测试 ([7251760](https://github.com/have-not-BUG/js-utils/commit/7251760b064e1c97d5781ef73e192d8144d0cb3b))
+* 完善浮点数函数及单元测试 ([49befb7](https://github.com/have-not-BUG/js-utils/commit/49befb7e3e3b9a95d383323c9ebf4b4d31d61543))
+
+
+### Bug Fixes
+
+* 修复sonar提示 ([507de6a](https://github.com/have-not-BUG/js-utils/commit/507de6aeb921c435b3064fe5f2530b61483673ab))
+* 修复工作流错误问题 ([67a9771](https://github.com/have-not-BUG/js-utils/commit/67a97710d268f0f4e880ea8fe9cb61ae340ff923))
+* 解决文档页面在控制台无法直接调试问题 ([cbc7285](https://github.com/have-not-BUG/js-utils/commit/cbc7285466befcd5cba8dc292bfc311cea80e3e0))
+
 ## [2.2.0](https://github.com/have-not-BUG/js-utils/compare/v2.1.0...v2.2.0) (2022-08-11)
 
 
