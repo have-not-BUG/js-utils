@@ -1371,7 +1371,7 @@ digitUppercase(12.12)
 
 
 <div class="description usertext">
-    浮点数的加减乘除，解决浮点数问题(如果运算数值比较大，建议使用decimal.js库)
+    浮点数的加减乘除，解决浮点数问题(如果运算数值比较大如123456.789*123456.789，建议使用decimal.js库)
 </div>
 
 
@@ -4300,7 +4300,7 @@ isInteger([]) => false</code></pre>
 
     
 
-    <h4 class="name" id="toFixed"><span class="type-signature"></span>toFixed<span class="signature">(value, num)</span><span class="type-signature"> &rarr; {String}</span></h4>
+    <h4 class="name" id="toFixed"><span class="type-signature"></span>toFixed<span class="signature">(number, precision)</span><span class="type-signature"> &rarr; {String}</span></h4>
 
     
 
@@ -4365,8 +4365,8 @@ isInteger([]) => false</code></pre>
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>toFixed(0.3358) => "0.34"  
-toFixed('0.3358') => "0.34"  </code></pre>
+    <pre class="prettyprint"><code>toFixed(0.3358) => "0.34"
+toFixed('0.3358') => "0.34"</code></pre>
 
 
 
@@ -4386,6 +4386,8 @@ toFixed('0.3358') => "0.34"  </code></pre>
         
 
         
+        <th>Default</th>
+        
 
         <th class="last">Description</th>
     </tr>
@@ -4396,7 +4398,7 @@ toFixed('0.3358') => "0.34"  </code></pre>
 
         <tr>
             
-                <td class="name"><code>value</code></td>
+                <td class="name"><code>number</code></td>
             
 
             <td class="type">
@@ -4414,6 +4416,10 @@ toFixed('0.3358') => "0.34"  </code></pre>
             
 
             
+                <td class="default">
+                
+                </td>
+            
 
             <td class="description last">需要保留小数点的数值</td>
         </tr>
@@ -4422,7 +4428,7 @@ toFixed('0.3358') => "0.34"  </code></pre>
 
         <tr>
             
-                <td class="name"><code>num</code></td>
+                <td class="name"><code>precision</code></td>
             
 
             <td class="type">
@@ -4436,6 +4442,12 @@ toFixed('0.3358') => "0.34"  </code></pre>
 
             
 
+            
+                <td class="default">
+                
+                    <code>2</code>
+                
+                </td>
             
 
             <td class="description last">保留小数点后几位 默认 2 位</td>

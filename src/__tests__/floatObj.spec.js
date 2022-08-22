@@ -1,5 +1,34 @@
 import floatObj from '@/global/floatObj'
 
+// import BigNumber from './big.js';
+// https://unpkg.com/decimal.js@10.4.0/decimal.mjs
+// https://unpkg.com/big.js@6.2.1/big.mjs
+// https://unpkg.com/bignumber.js@9.1.0/bignumber.mjs
+// function floatObj(){
+//   function plus(start,end){
+//     return (new BigNumber(start).plus(new BigNumber(end))).toNumber()
+//   }
+//   function minus(start,end){
+//     return (new BigNumber(start).minus(new BigNumber(end))).toNumber()
+//   }
+//   function times(start,end){
+//     return (new BigNumber(start).times(new BigNumber(end))).toNumber()
+//   }
+//   function divide(start,end){
+//     return (new BigNumber(start).div(new BigNumber(end))).toNumber()
+//   }
+//   function round(num,rad){
+//     return (new BigNumber(num)).toFixed(rad)
+//   }
+//   return {
+//     plus,
+//     minus,
+//     times,
+//     divide,
+//     round
+//   }
+// }
+
 describe('floatObj 方法测试', () => {
   test('相加', () => {
     expect(floatObj().plus(0.1,0.2)).toBe(0.3)

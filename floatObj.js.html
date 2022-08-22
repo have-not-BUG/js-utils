@@ -51,7 +51,7 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * 浮点数的加减乘除，解决浮点数问题(如果运算数值比较大，建议使用decimal.js库)
+ * 浮点数的加减乘除，解决浮点数问题(如果运算数值比较大如123456.789*123456.789，建议使用decimal.js库)
  * @return {{divide: (function(*=, *=, *=): *|null|string), plus: (function(*=, *=, *=): *|null|string), times: (function(*=, *=, *=): *|null|string), minus: (function(*=, *=, *=): *|null|string)}}
  @example console.log(floatObj().plus(0.1,0.2))  // 0.3
  @example console.log(floatObj().times(19.9,100))  // 1990
