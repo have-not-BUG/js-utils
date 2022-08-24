@@ -8,14 +8,6 @@
  * getRemovedQueryStringInUrl('','http://127.0.0.1:8082/?token=aaa') // 'http://127.0.0.1:8082/'
  */
 function getRemovedQueryStringInUrl(queryKey,url) {
-    //  'http://127.0.0.1:8080/?a=sdds&token=t&user=787#/gamelist'
-    //  'http://127.0.0.1:8080/?a=sdds&token=taa&user=787#/gamelist'
-    //  'http://127.0.0.1:8080/#/gamelist?a=b&token=11&user=787'
-    // 'http://127.0.0.1:8080/?a=sdds&token=t&user=787'
-
-    //  'http://127.0.0.1:8080/?a=sdds&token=t&user=787#/gamelist'
-    //  'http://127.0.0.1:8080/?a=sdds&token=t&user=787'
-    //  'http://127.0.0.1:8080/?a=sdds'
    if(!queryKey){
        queryKey='token'
    }
@@ -64,16 +56,5 @@ function getRemovedQueryStringInUrl(queryKey,url) {
 
 
 }
-
-// 测试用例
-// getRemovedQueryStringInUrl('a','http://127.0.0.1:8080/?a=sdds&token=t&user=787#/gamelist')
-// getRemovedQueryStringInUrl('token','http://127.0.0.1:8080/?a=sdds&token=taa&user=787#/gamelist')
-// getRemovedQueryStringInUrl('token','http://127.0.0.1:8080/#/gamelist?a=b&token=11&user=787')
-// getRemovedQueryStringInUrl('a','http://127.0.0.1:8080/?a=sdds&token=t&user=787')
-//
-// getRemovedQueryStringInUrl('user','http://127.0.0.1:8080/?a=sdds&token=t&user=787#/gamelist')
-// getRemovedQueryStringInUrl('user','http://127.0.0.1:8080/?a=sdds&token=t&user=787')
-// getRemovedQueryStringInUrl('a','http://127.0.0.1:8080/?a=sdds')
-
 
 export default getRemovedQueryStringInUrl
