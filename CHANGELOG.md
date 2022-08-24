@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.4.0](https://github.com/have-not-BUG/js-utils/compare/v2.3.1...v2.4.0) (2022-08-24)
+
+
+### Features
+
+* 1、支持方法直接实时运行 2、新增getRemovedQueryStringInUrl单元测试 3、修改formatCurrency ([bd1319c](https://github.com/have-not-BUG/js-utils/commit/bd1319ce92d283012962e7dd7fdf9505ea10b102))
+
 ### [2.3.1](https://github.com/have-not-BUG/js-utils/compare/v2.3.0...v2.3.1) (2022-08-22)
 
 ## [2.3.0](https://github.com/have-not-BUG/js-utils/compare/v2.2.0...v2.3.0) (2022-08-22)
