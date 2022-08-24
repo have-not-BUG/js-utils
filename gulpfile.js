@@ -5,7 +5,7 @@ var connect = require('gulp-connect');
 var jsdoc = require('gulp-jsdoc3');
 var {run} = require('runjs');
 var minimist = require('minimist');
-var isReloadJestType= minimist(process.argv)['t'] === 'reloadJest';
+var reloadJestOrUtilsType= minimist(process.argv)['t'];
 // console.log('process.env.PORT',process.env.PORT)
 /* Demo paths */
 var SRC_DIR_PATH = path.join(__dirname, 'src');
@@ -70,17 +70,24 @@ gulp.task('watch', ['src'] ,function() {
     var watcher = gulp.watch(watchPaths, ['src', 'reload']);
 
     watcher.on('change', function (event) {
+        // 文件变化了==== { type: 'changed',
+        //   path: 'D:\\1测试demo\\js-utils\\src\\__tests__\\deepClone.spec.js' }
         console.log('文件变化了====',event)
         var changedFilePath=event.path;
         var changedTestFileNameWithSprit=changedFilePath.split('__tests__')[1];
+        var changedUtilsFileNameWithSprit=changedFilePath.split('global')[1];
         var changedTestFileName=changedTestFileNameWithSprit ? changedTestFileNameWithSprit.replace(/\//,'').replace(/\\/,'') :'';
-        // 文件变化了==== { type: 'changed',
-        //   path: 'D:\\1测试demo\\js-utils\\src\\__tests__\\deepClone.spec.js' }
+        var changedUtilsFileName=changedUtilsFileNameWithSprit ? changedUtilsFileNameWithSprit.replace(/\//,'').replace(/\\/,'') :'';
         console.log('File: ' + changedFilePath + ' was ' + event.type + ', running tasks...');
         // File: D:\1测试demo\js-utils\src\__tests__\deepClone.spec.js was changed, running tasks...
+        console.log('changedUtilsFileName',changedUtilsFileName)
 
-        if(isReloadJestType && event.type ==='changed' && changedTestFileName){
+        if(reloadJestOrUtilsType ==='reloadJest' && event.type ==='changed' && changedTestFileName){
             run('npm run jest:watch ' +changedTestFileName)
+
+        }
+        if(reloadJestOrUtilsType === 'reloadUtils' && event.type ==='changed' && changedUtilsFileName){
+            run(`nodemon -r esm src/global/${changedUtilsFileName}`)
 
         }
     });
@@ -93,7 +100,7 @@ gulp.task('connect', ['src'], function() {
     connect.server({
         root: SRC_DIR_DESTINATION_PATH,
         livereload: true,
-        port:isReloadJestType ? 8888:8080
+        port:reloadJestOrUtilsType ==='reloadJest' ? 8888:reloadJestOrUtilsType ==='reloadUtils' ? 8887 :8886
     });
 });
 

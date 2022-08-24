@@ -11,9 +11,10 @@
     "npm"
   ],
   "scripts": {
-    "serve": "gulp serve",
-    "dev": "gulp serve",
     "dev:jest": "gulp serve -t reloadJest",
+    "dev": "gulp serve -t reloadUtils",
+    "serve": "gulp serve",
+    "dev:doc": "gulp serve",
     "build": "npm run build:doc & npm run build:npmall",
     "build:doc": "rimraf docs && jsdoc -c jsdoc.json",
     "build:npmdev": "rimraf npm && rollup -c -w --environment NODE_ENV:development",
@@ -46,7 +47,9 @@
     "url": "https://github.com/have-not-BUG/js-utils/issues"
   },
   "homepage": "https://github.com/have-not-BUG/js-utils#readme",
-  "dependencies": {},
+  "dependencies": {
+    "esm": "~3.2.25"
+  },
   "devDependencies": {
     "@babel/core": "~7.14.6",
     "@babel/plugin-transform-runtime": "~7.14.5",
