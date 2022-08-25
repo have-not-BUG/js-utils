@@ -197,7 +197,7 @@ function floatObj() {
     /**
      * 四舍五入
      */
-    function round(num, ratio) {
+    function round(num, ratio=2) {
         var base = Math.pow(10, ratio);
         var result = divide(Math.round(Math.abs(times(num, base))), base);
         if (num < 0 && result !== 0) {
