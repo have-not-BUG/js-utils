@@ -1,6 +1,6 @@
 {
   "name": "js-utils-lc",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "private": false,
   "description": "JavaScript工具函数库文档及npm管理",
   "main": "npm/umd/index.js",

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.4.1](https://github.com/have-not-BUG/js-utils/compare/v2.4.0...v2.4.1) (2022-08-25)
+
+
+### Bug Fixes
+
+* 1、完善toFixed、formatcurrency方法及单元测试 ([6f6f5ae](https://github.com/have-not-BUG/js-utils/commit/6f6f5ae27bb99bede4a877c542a36d31f872d5f6))
+
 ## [2.4.0](https://github.com/have-not-BUG/js-utils/compare/v2.3.1...v2.4.0) (2022-08-24)
 
 
