@@ -4,12 +4,12 @@
  * @param {Array} arr2 数组2
  * @return {Boolean}
  * @example
- * arrayEqual([1,2,3],[1,3,2])
+ * isArrayEqual([1,2,3],[1,3,2])
  * true
- * arrayEqual([1, { a: 1 }],[1, { a: 1 }])
+ * isArrayEqual([1, { a: 1 }],[1, { a: 1 }])
  * true
  */
-function arrayEqual(arr1, arr2) {
+function isArrayEqual(arr1, arr2) {
     const canStringifyTypeArr=['[object Object]','[object Undefined]','[object Null]','[object Date]'];
     const canToStringTypeArr=['[object RegExp]','[object Array]','[object Function]'];
     if(!Array.isArray(arr1) || !Array.isArray(arr2)){
@@ -27,7 +27,7 @@ function arrayEqual(arr1, arr2) {
             }
         }else if(canToStringTypeArr.includes(Object.prototype.toString.call(arr1Sort[i]))){
             if(Array.isArray(arr1Sort[i])){
-               return arrayEqual(arr1Sort[i],arr2Sort[i])
+               return isArrayEqual(arr1Sort[i],arr2Sort[i])
             }else {
                 if(arr1Sort[i].toString() !== arr2Sort[i].toString()){
                     return false
@@ -42,4 +42,4 @@ function arrayEqual(arr1, arr2) {
     return true
 }
 
-export default arrayEqual
+export default isArrayEqual
