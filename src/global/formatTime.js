@@ -17,6 +17,8 @@
  * "2021-07-20 15:01"
  * formatTime(new Date('2021-07-20 15:01') , '{y}/{m}/{d} {h}-{i}')
  * "2021/07/20 15-01"
+ *  formatTime(new Date('2021-07-20 15:01') , '{y}/{m}/{d} {h}:{i}')
+ * "2021/07/20 15:01"
  */
 function formatTime(time, option) {
     if (('' + time).length === 10) {

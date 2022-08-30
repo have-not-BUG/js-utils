@@ -35,7 +35,7 @@
     
     <input type="text" id="nav-search" placeholder="Search" />
     
-    <h2><a href="index.html">Home</a></h2><h2><a href="https://github.com/have-not-BUG/js-utils" class="menu-item" id="website_link" >GitHub</a></h2><h3>Global</h3><ul><li><a href="global.html#arrayEqual">arrayEqual</a></li><li><a href="global.html#browserInfo">browserInfo</a></li><li><a href="global.html#byteLength">byteLength</a></li><li><a href="global.html#dateAndTimestampConversion">dateAndTimestampConversion</a></li><li><a href="global.html#debounce">debounce</a></li><li><a href="global.html#deepClone">deepClone</a></li><li><a href="global.html#digitUppercase">digitUppercase</a></li><li><a href="global.html#floatObj">floatObj</a></li><li><a href="global.html#formatCurrency">formatCurrency</a></li><li><a href="global.html#formatNumberZero">formatNumberZero</a></li><li><a href="global.html#formatTime">formatTime</a></li><li><a href="global.html#getDaysInOneMonth">getDaysInOneMonth</a></li><li><a href="global.html#getNowDate">getNowDate</a></li><li><a href="global.html#getObjVal">getObjVal</a></li><li><a href="global.html#getRemovedQueryStringInUrl">getRemovedQueryStringInUrl</a></li><li><a href="global.html#getSearchParam">getSearchParam</a></li><li><a href="global.html#isInteger">isInteger</a></li><li><a href="global.html#isWechatBrowser">isWechatBrowser</a></li><li><a href="global.html#lotteryRandom">lotteryRandom</a></li><li><a href="global.html#paramToObj">paramToObj</a></li><li><a href="global.html#scrollAnimation">scrollAnimation</a></li><li><a href="global.html#sequenceParam">sequenceParam</a></li><li><a href="global.html#thousandthPlace">thousandthPlace</a></li><li><a href="global.html#throttle">throttle</a></li><li><a href="global.html#toFixed">toFixed</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h2><a href="https://github.com/have-not-BUG/js-utils" class="menu-item" id="website_link" >GitHub</a></h2><h3>Global</h3><ul><li><a href="global.html#browserInfo">browserInfo</a></li><li><a href="global.html#byteLength">byteLength</a></li><li><a href="global.html#dateAndTimestampConversion">dateAndTimestampConversion</a></li><li><a href="global.html#debounce">debounce</a></li><li><a href="global.html#deepClone">deepClone</a></li><li><a href="global.html#digitUppercase">digitUppercase</a></li><li><a href="global.html#floatObj">floatObj</a></li><li><a href="global.html#formatNumberZero">formatNumberZero</a></li><li><a href="global.html#formatTime">formatTime</a></li><li><a href="global.html#getDaysInOneMonth">getDaysInOneMonth</a></li><li><a href="global.html#getNowDate">getNowDate</a></li><li><a href="global.html#getObjVal">getObjVal</a></li><li><a href="global.html#getRemovedQueryStringInUrl">getRemovedQueryStringInUrl</a></li><li><a href="global.html#getSearchParam">getSearchParam</a></li><li><a href="global.html#isArrayEqual">isArrayEqual</a></li><li><a href="global.html#isExternalPath">isExternalPath</a></li><li><a href="global.html#isInteger">isInteger</a></li><li><a href="global.html#isObjHasOwnProperty">isObjHasOwnProperty</a></li><li><a href="global.html#isWechatBrowser">isWechatBrowser</a></li><li><a href="global.html#lotteryRandom">lotteryRandom</a></li><li><a href="global.html#paramToObj">paramToObj</a></li><li><a href="global.html#scrollAnimation">scrollAnimation</a></li><li><a href="global.html#sequenceParam">sequenceParam</a></li><li><a href="global.html#thousandthPlace">thousandthPlace</a></li><li><a href="global.html#throttle">throttle</a></li><li><a href="global.html#toFixed">toFixed</a></li></ul>
 </nav>
 
 <div id="main">
@@ -64,7 +64,7 @@ function toFixed(number, precision=2) {
    //原有的toFixed会有问题，如 0.105.toFixed(2) = 0.1 // 不是 0.11
    // toPrecision 方法不太好实现，比如 0.105.toPrecision(2) //0.1   0.105.toPrecision(3) // 0.105
    // Math.round 应注意负数问题 如 Math.round(-10.5) // -10 但是 Math.round(10.5) // 11
-   const isNegativeNumber= number &lt;0 ;
+   const isNegativeNumber= Number(number) &lt;0 ;
    const originNumberStrHasNotSign=String(Math.abs(number));
    const fixedNumberStrNotSign=String(Math.round(+originNumberStrHasNotSign + 'e' + precision) / Math.pow(10, precision));
    const realIntegerPart = fixedNumberStrNotSign.split('.')[0];
@@ -91,8 +91,6 @@ function toFixed(number, precision=2) {
    }
 }
 
-// console.log(toFixed(0.0000069,5))
-// console.log(toFixed(12,5))
 export default toFixed;
 </code></pre>
         </article>

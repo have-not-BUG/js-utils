@@ -11,16 +11,13 @@
 
  */
 function getSearchParam(name, url) {
-    var reg = new RegExp("(^|&)".concat(name, "=([^&]*)(&|$)"), 'i');
-    if(url){
-        var index=url.indexOf('?');
-        url= index !==-1 ? url.substring(index):''
-    }
-    var r = url ? url.substr(1).match(reg) : window.location.search.substr(1).match(reg);
-    if (r !== null) {
+    const reg = new RegExp(`(^|&)${name}=([^&]*)(&|$)`, 'i');
+    const searchAndHashPart= url ? url.split('?')[1] : window.location.search.replace(/\?/g,'');
+    const searchPart=searchAndHashPart ? searchAndHashPart.split('#')[0] :''
+    const r = searchPart ? searchPart.match(reg) : null;
+    if (r != null) {
         return decodeURIComponent(r[2]);
     }
-
     return '';
 }
 

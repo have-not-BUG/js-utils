@@ -23,6 +23,7 @@ describe('getRemovedQueryStringInUrl 方法测试', () => {
 
   test('无& 无#的情况', () => {
     expect(getRemovedQueryStringInUrl('a','http://127.0.0.1:8080/?a=sdds')).toBe('http://127.0.0.1:8080/')
+    expect(getRemovedQueryStringInUrl('a','http://127.0.0.1:8080/')).toBe('http://127.0.0.1:8080/')
   })
 
 

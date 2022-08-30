@@ -3,7 +3,7 @@
  * @param {String} seperator 连接字符 默认 -
  * @returns {String} 当前日期
  * @example
- * getNowDate() => "2020-05-18"  
+ * getNowDate() => "2020-05-18"
  */
 function getNowDate(seperator = "-") {
   const showDate = new Date();

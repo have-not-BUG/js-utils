@@ -35,7 +35,7 @@
     
     <input type="text" id="nav-search" placeholder="Search" />
     
-    <h2><a href="index.html">Home</a></h2><h2><a href="https://github.com/have-not-BUG/js-utils" class="menu-item" id="website_link" >GitHub</a></h2><h3>Global</h3><ul><li><a href="global.html#arrayEqual">arrayEqual</a></li><li><a href="global.html#browserInfo">browserInfo</a></li><li><a href="global.html#byteLength">byteLength</a></li><li><a href="global.html#dateAndTimestampConversion">dateAndTimestampConversion</a></li><li><a href="global.html#debounce">debounce</a></li><li><a href="global.html#deepClone">deepClone</a></li><li><a href="global.html#digitUppercase">digitUppercase</a></li><li><a href="global.html#floatObj">floatObj</a></li><li><a href="global.html#formatCurrency">formatCurrency</a></li><li><a href="global.html#formatNumberZero">formatNumberZero</a></li><li><a href="global.html#formatTime">formatTime</a></li><li><a href="global.html#getDaysInOneMonth">getDaysInOneMonth</a></li><li><a href="global.html#getNowDate">getNowDate</a></li><li><a href="global.html#getObjVal">getObjVal</a></li><li><a href="global.html#getRemovedQueryStringInUrl">getRemovedQueryStringInUrl</a></li><li><a href="global.html#getSearchParam">getSearchParam</a></li><li><a href="global.html#isInteger">isInteger</a></li><li><a href="global.html#isWechatBrowser">isWechatBrowser</a></li><li><a href="global.html#lotteryRandom">lotteryRandom</a></li><li><a href="global.html#paramToObj">paramToObj</a></li><li><a href="global.html#scrollAnimation">scrollAnimation</a></li><li><a href="global.html#sequenceParam">sequenceParam</a></li><li><a href="global.html#thousandthPlace">thousandthPlace</a></li><li><a href="global.html#throttle">throttle</a></li><li><a href="global.html#toFixed">toFixed</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h2><a href="https://github.com/have-not-BUG/js-utils" class="menu-item" id="website_link" >GitHub</a></h2><h3>Global</h3><ul><li><a href="global.html#browserInfo">browserInfo</a></li><li><a href="global.html#byteLength">byteLength</a></li><li><a href="global.html#dateAndTimestampConversion">dateAndTimestampConversion</a></li><li><a href="global.html#debounce">debounce</a></li><li><a href="global.html#deepClone">deepClone</a></li><li><a href="global.html#digitUppercase">digitUppercase</a></li><li><a href="global.html#floatObj">floatObj</a></li><li><a href="global.html#formatNumberZero">formatNumberZero</a></li><li><a href="global.html#formatTime">formatTime</a></li><li><a href="global.html#getDaysInOneMonth">getDaysInOneMonth</a></li><li><a href="global.html#getNowDate">getNowDate</a></li><li><a href="global.html#getObjVal">getObjVal</a></li><li><a href="global.html#getRemovedQueryStringInUrl">getRemovedQueryStringInUrl</a></li><li><a href="global.html#getSearchParam">getSearchParam</a></li><li><a href="global.html#isArrayEqual">isArrayEqual</a></li><li><a href="global.html#isExternalPath">isExternalPath</a></li><li><a href="global.html#isInteger">isInteger</a></li><li><a href="global.html#isObjHasOwnProperty">isObjHasOwnProperty</a></li><li><a href="global.html#isWechatBrowser">isWechatBrowser</a></li><li><a href="global.html#lotteryRandom">lotteryRandom</a></li><li><a href="global.html#paramToObj">paramToObj</a></li><li><a href="global.html#scrollAnimation">scrollAnimation</a></li><li><a href="global.html#sequenceParam">sequenceParam</a></li><li><a href="global.html#thousandthPlace">thousandthPlace</a></li><li><a href="global.html#throttle">throttle</a></li><li><a href="global.html#toFixed">toFixed</a></li></ul>
 </nav>
 
 <div id="main">
@@ -55,13 +55,13 @@
  * @param {Object} obj 需要序列化的参数对象
  * @returns {String} 序列化后的字符串
  * @example
- * sequenceParam({a: 1, num: 20}) => "a=1&amp;num=20"  
+ * sequenceParam({a: 1, num: 20}) => "a=1&amp;num=20"
  */
 
 function sequenceParam(obj) {
   let str = '';
-  if (typeof obj !== 'object') {
-    throw new Error('exportParam 过滤器参数要求类型为object');
+  if (Object.prototype.toString.call(obj) !== '[object Object]') {
+    throw new Error('参数要求类型为object');
   }
   for (const key in obj) {
     if (obj[key] !== undefined &amp;&amp; obj[key] !== null) {
@@ -71,7 +71,8 @@ function sequenceParam(obj) {
   return str.substr(0, str.length - 1);
 }
 
-export default sequenceParam;</code></pre>
+export default sequenceParam;
+</code></pre>
         </article>
     </section>
 

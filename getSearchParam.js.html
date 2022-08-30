@@ -35,7 +35,7 @@
     
     <input type="text" id="nav-search" placeholder="Search" />
     
-    <h2><a href="index.html">Home</a></h2><h2><a href="https://github.com/have-not-BUG/js-utils" class="menu-item" id="website_link" >GitHub</a></h2><h3>Global</h3><ul><li><a href="global.html#arrayEqual">arrayEqual</a></li><li><a href="global.html#browserInfo">browserInfo</a></li><li><a href="global.html#byteLength">byteLength</a></li><li><a href="global.html#dateAndTimestampConversion">dateAndTimestampConversion</a></li><li><a href="global.html#debounce">debounce</a></li><li><a href="global.html#deepClone">deepClone</a></li><li><a href="global.html#digitUppercase">digitUppercase</a></li><li><a href="global.html#floatObj">floatObj</a></li><li><a href="global.html#formatCurrency">formatCurrency</a></li><li><a href="global.html#formatNumberZero">formatNumberZero</a></li><li><a href="global.html#formatTime">formatTime</a></li><li><a href="global.html#getDaysInOneMonth">getDaysInOneMonth</a></li><li><a href="global.html#getNowDate">getNowDate</a></li><li><a href="global.html#getObjVal">getObjVal</a></li><li><a href="global.html#getRemovedQueryStringInUrl">getRemovedQueryStringInUrl</a></li><li><a href="global.html#getSearchParam">getSearchParam</a></li><li><a href="global.html#isInteger">isInteger</a></li><li><a href="global.html#isWechatBrowser">isWechatBrowser</a></li><li><a href="global.html#lotteryRandom">lotteryRandom</a></li><li><a href="global.html#paramToObj">paramToObj</a></li><li><a href="global.html#scrollAnimation">scrollAnimation</a></li><li><a href="global.html#sequenceParam">sequenceParam</a></li><li><a href="global.html#thousandthPlace">thousandthPlace</a></li><li><a href="global.html#throttle">throttle</a></li><li><a href="global.html#toFixed">toFixed</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h2><a href="https://github.com/have-not-BUG/js-utils" class="menu-item" id="website_link" >GitHub</a></h2><h3>Global</h3><ul><li><a href="global.html#browserInfo">browserInfo</a></li><li><a href="global.html#byteLength">byteLength</a></li><li><a href="global.html#dateAndTimestampConversion">dateAndTimestampConversion</a></li><li><a href="global.html#debounce">debounce</a></li><li><a href="global.html#deepClone">deepClone</a></li><li><a href="global.html#digitUppercase">digitUppercase</a></li><li><a href="global.html#floatObj">floatObj</a></li><li><a href="global.html#formatNumberZero">formatNumberZero</a></li><li><a href="global.html#formatTime">formatTime</a></li><li><a href="global.html#getDaysInOneMonth">getDaysInOneMonth</a></li><li><a href="global.html#getNowDate">getNowDate</a></li><li><a href="global.html#getObjVal">getObjVal</a></li><li><a href="global.html#getRemovedQueryStringInUrl">getRemovedQueryStringInUrl</a></li><li><a href="global.html#getSearchParam">getSearchParam</a></li><li><a href="global.html#isArrayEqual">isArrayEqual</a></li><li><a href="global.html#isExternalPath">isExternalPath</a></li><li><a href="global.html#isInteger">isInteger</a></li><li><a href="global.html#isObjHasOwnProperty">isObjHasOwnProperty</a></li><li><a href="global.html#isWechatBrowser">isWechatBrowser</a></li><li><a href="global.html#lotteryRandom">lotteryRandom</a></li><li><a href="global.html#paramToObj">paramToObj</a></li><li><a href="global.html#scrollAnimation">scrollAnimation</a></li><li><a href="global.html#sequenceParam">sequenceParam</a></li><li><a href="global.html#thousandthPlace">thousandthPlace</a></li><li><a href="global.html#throttle">throttle</a></li><li><a href="global.html#toFixed">toFixed</a></li></ul>
 </nav>
 
 <div id="main">
@@ -63,16 +63,13 @@
 
  */
 function getSearchParam(name, url) {
-    var reg = new RegExp("(^|&amp;)".concat(name, "=([^&amp;]*)(&amp;|$)"), 'i');
-    if(url){
-        var index=url.indexOf('?');
-        url= index !==-1 ? url.substring(index):''
-    }
-    var r = url ? url.substr(1).match(reg) : window.location.search.substr(1).match(reg);
-    if (r !== null) {
+    const reg = new RegExp(`(^|&amp;)${name}=([^&amp;]*)(&amp;|$)`, 'i');
+    const searchAndHashPart= url ? url.split('?')[1] : window.location.search.replace(/\?/g,'');
+    const searchPart=searchAndHashPart ? searchAndHashPart.split('#')[0] :''
+    const r = searchPart ? searchPart.match(reg) : null;
+    if (r != null) {
         return decodeURIComponent(r[2]);
     }
-
     return '';
 }
 
