@@ -12,7 +12,7 @@ function toFixed(number, precision=2) {
    //原有的toFixed会有问题，如 0.105.toFixed(2) = 0.1 // 不是 0.11
    // toPrecision 方法不太好实现，比如 0.105.toPrecision(2) //0.1   0.105.toPrecision(3) // 0.105
    // Math.round 应注意负数问题 如 Math.round(-10.5) // -10 但是 Math.round(10.5) // 11
-   const isNegativeNumber= number <0 ;
+   const isNegativeNumber= Number(number) <0 ;
    const originNumberStrHasNotSign=String(Math.abs(number));
    const fixedNumberStrNotSign=String(Math.round(+originNumberStrHasNotSign + 'e' + precision) / Math.pow(10, precision));
    const realIntegerPart = fixedNumberStrNotSign.split('.')[0];
@@ -39,6 +39,4 @@ function toFixed(number, precision=2) {
    }
 }
 
-// console.log(toFixed(0.0000069,5))
-// console.log(toFixed(12,5))
 export default toFixed;
