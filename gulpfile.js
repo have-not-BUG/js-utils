@@ -82,11 +82,11 @@ gulp.task('watch', ['src'] ,function() {
         // File: D:\1测试demo\js-utils\src\__tests__\deepClone.spec.js was changed, running tasks...
         console.log('changedUtilsFileName',changedUtilsFileName)
 
-        if(reloadJestOrUtilsType ==='reloadJest' && event.type ==='changed' && changedTestFileName){
-            run('npm run jest:watch ' +changedTestFileName)
-
-        }
-        if(reloadJestOrUtilsType === 'reloadUtils' && event.type ==='changed' && changedUtilsFileName){
+        // if(reloadJestOrUtilsType ==='reloadJest' && event.type ==='changed' && changedTestFileName){
+        //     run('npm run jest:watch')
+        //
+        // }
+        if(reloadJestOrUtilsType === 'reloadNodemon' && event.type ==='changed' && changedUtilsFileName){
             run(`nodemon -r esm src/global/${changedUtilsFileName}`)
 
         }
@@ -100,7 +100,7 @@ gulp.task('connect', ['src'], function() {
     connect.server({
         root: SRC_DIR_DESTINATION_PATH,
         livereload: true,
-        port:reloadJestOrUtilsType ==='reloadJest' ? 8888:reloadJestOrUtilsType ==='reloadUtils' ? 8887 :8886
+        port:reloadJestOrUtilsType ==='reloadNodemon' ? 8887 :8888
     });
 });
 

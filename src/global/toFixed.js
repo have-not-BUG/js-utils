@@ -4,8 +4,9 @@
  * @param {Number} precision 保留小数点后几位 默认 2 位
  * @returns {String} 保留后的数值字符串
  * @example
- * toFixed(0.3358) => "0.34"
- * toFixed('0.3358') => "0.34"
+ * toFixed(0.105，2) => "0.11"
+ * toFixed('0.105',4) => "0.1050"
+ * toFixed(0.105) => "0.11"
  */
 
 function toFixed(number, precision=2) {
@@ -38,5 +39,4 @@ function toFixed(number, precision=2) {
       return isNegativeNumber ? `-${realIntegerPart}.${realPrecisionPart.padEnd(precision,'0')}` : `${realIntegerPart}.${realPrecisionPart.padEnd(precision,'0')}`
    }
 }
-
 export default toFixed;

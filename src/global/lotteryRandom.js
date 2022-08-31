@@ -16,16 +16,14 @@
   }
 
   const random = Math.random() * sum;  // 生成概率随机数
-
   for (let i = probs.length - 1; i >= 0; i--) {
     factor += probs[i];
     if (random <= factor) {
-      // console.log(random, factor);
       return list[i];
     }
 
   }
   return null;
 }
-
+ lotteryRandom([1, 2, 3], [0.5, 0.35, 0.15])
 export default lotteryRandom;

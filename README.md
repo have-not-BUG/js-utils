@@ -127,14 +127,14 @@ console.log('jsUtilsLc.removeArrRepeat',jsUtilsLc.removeArrRepeat([1,2,3,3,4,9,8
 
 ### （一） 一定用到的方法
 
-1、使用`gulp serve`或者`npm run dev:doc` 指令启动文档服务 （支持热更新，会在项目根目录生成hotupdate目录）
+1、使用`gulp serve`或者`npm run dev` 指令启动服务 （支持热更新，会在项目根目录生成hotupdate目录，如果方法变动文档也会自动更新，此时如果在`src/global/你正在编辑的方法.js`运行你的方法并console，可以在浏览器控制台看console运行结果）
 
 
-2、使用`npm run dev` 除了文档服务自动支持热更外，还支持nodemon方式的自动热更新，即自动运行`nodemon -r esm src/global/你正在编辑的方法.js`，此时直接在`src/global/你正在编辑的方法.js`里运行`你正在编辑的方法.js`里面的方法并console相关数据可以在命令行查看console运行结果
+2、不推荐----使用`npm run dev:nodemon` 除了文档服务自动支持热更外，还支持nodemon方式的自动热更新，即自动运行`nodemon -r esm src/global/你正在编辑的方法.js`，此时直接在`src/global/你正在编辑的方法.js`里运行`你正在编辑的方法.js`里面的方法并console相关数据可以在命令行查看console运行结果
 ![示例](https://publicimage-1251317493.file.myqcloud.com/reportBug/202208231731458610.jpg)
 
 
-3、使用`npm run dev:jest`除了文档服务自动支持热更外，还支持单元测试热更新(在`src/__test__`目录下新建单元测试文件，并编写单元测试，指令可实时运行单测结果)
+3、使用`npm run dev:jest`支持单元测试热更新(在`src/__test__`目录下新建单元测试文件，并编写单元测试，指令可实时运行单测结果)
 
 
 4、在`src/global`目录下新建 `方法名.js`的js文件，并在该js文件里面完成函数的编写及jsdoc注释并`export`出你的函数。

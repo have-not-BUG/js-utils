@@ -10,7 +10,7 @@
 */
 function getObjVal(object, path) {
   const result = object == null ? undefined : getPath(object, path);
-  
+
   function getPath(object, path) {
     path = path.split(".");
 
@@ -20,9 +20,10 @@ function getObjVal(object, path) {
     while (object != null && index < length) {
       object = object[path[index++]]
     }
-    return (index && index == length) ? object : undefined;
+    return (index && index === length) ? object : undefined;
   }
   return result;
 }
+getObjVal({ 'a': { 'b': { 'c': 3 } } }, "a.b.c")
 
 export default getObjVal;

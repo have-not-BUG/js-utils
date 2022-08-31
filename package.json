@@ -11,10 +11,10 @@
     "npm"
   ],
   "scripts": {
-    "dev:jest": "gulp serve -t reloadJest",
-    "dev": "gulp serve -t reloadUtils",
+    "dev:jest": "jest -o --watch",
+    "dev:node": "gulp serve -t reloadNodemon",
     "serve": "gulp serve",
-    "dev:doc": "gulp serve",
+    "dev": "gulp serve",
     "build": "npm run build:doc & npm run build:npmall",
     "build:doc": "rimraf docs && jsdoc -c jsdoc.json",
     "build:npmdev": "rimraf npm && rollup -c -w --environment NODE_ENV:development",
@@ -24,7 +24,7 @@
     "rm": "rimraf npm && rimraf docs",
     "prepublishOnly": "standard-version",
     "jest": "jest",
-    "jest:watch": "jest --watch",
+    "jest:watch": "jest -o --watch",
     "jest:coverage": "jest --coverage",
     "jest:nocache": "jest --no-cache",
     "preinstall": "npx npm-force-resolutions"
