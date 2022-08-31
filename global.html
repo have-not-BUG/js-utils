@@ -2821,6 +2821,10 @@ true</code></pre>
 
 
 
+<div class="description usertext">
+    判断路径是否为http、mailto或tel
+</div>
+
 
 
 
@@ -2872,7 +2876,7 @@ true</code></pre>
 
             
 
-            <td class="description last"></td>
+            <td class="description last">路径值</td>
         </tr>
 
     
@@ -3603,7 +3607,7 @@ isInteger([]) => false</code></pre>
 
 
 <div class="description usertext">
-    url 获取查询参数
+    url 获取url上的所有查询参数
 </div>
 
 
@@ -4404,7 +4408,7 @@ paramToObj('http://127.0.0.1:8080/?a=sdds&amp;token=taa&amp;user=787#/gamelist')
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="toFixed.js.html">toFixed.js</a>, <a href="toFixed.js.html#line11">line 11</a>
+        <a href="toFixed.js.html">toFixed.js</a>, <a href="toFixed.js.html#line12">line 12</a>
     </li></ul></dd>
     
 
@@ -4457,8 +4461,9 @@ paramToObj('http://127.0.0.1:8080/?a=sdds&amp;token=taa&amp;user=787#/gamelist')
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>toFixed(0.3358) => "0.34"
-toFixed('0.3358') => "0.34"</code></pre>
+    <pre class="prettyprint"><code>toFixed(0.105，2) => "0.11"
+toFixed('0.105',4) => "0.1050"
+toFixed(0.105) => "0.11"</code></pre>
 
 
 

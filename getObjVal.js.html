@@ -62,7 +62,7 @@
 */
 function getObjVal(object, path) {
   const result = object == null ? undefined : getPath(object, path);
-  
+
   function getPath(object, path) {
     path = path.split(".");
 
@@ -72,7 +72,7 @@ function getObjVal(object, path) {
     while (object != null &amp;&amp; index &lt; length) {
       object = object[path[index++]]
     }
-    return (index &amp;&amp; index == length) ? object : undefined;
+    return (index &amp;&amp; index === length) ? object : undefined;
   }
   return result;
 }
