@@ -25,5 +25,4 @@
   }
   return null;
 }
- lotteryRandom([1, 2, 3], [0.5, 0.35, 0.15])
 export default lotteryRandom;

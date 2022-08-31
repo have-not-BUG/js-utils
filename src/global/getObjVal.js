@@ -24,6 +24,5 @@ function getObjVal(object, path) {
   }
   return result;
 }
-getObjVal({ 'a': { 'b': { 'c': 3 } } }, "a.b.c")
 
 export default getObjVal;
