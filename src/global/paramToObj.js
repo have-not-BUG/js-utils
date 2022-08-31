@@ -1,5 +1,5 @@
 /**
- * @description url 获取查询参数
+ * @description url 获取url上的所有查询参数
  * @param {String} url
  * @returns {Object} ? 后的参数对象
  * @example
