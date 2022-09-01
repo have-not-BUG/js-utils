@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.6.1](https://github.com/have-not-BUG/js-utils/compare/v2.6.0...v2.6.1) (2022-09-01)
+
+
+### Bug Fixes
+
+* 解决用户安装包错误问题 ([3479b57](https://github.com/have-not-BUG/js-utils/commit/3479b57103d8120b78ee2494e95e0f23bed1a215))
+
+## [2.6.0](https://github.com/have-not-BUG/js-utils/compare/v2.5.0...v2.6.0) (2022-08-31)
+
+
+### Features
+
+* 修改运行指令说明及新增部分函数单元测试 ([e352301](https://github.com/have-not-BUG/js-utils/commit/e352301a6bdc636728c61ef0d7b4a66f5f10cd16))
+
+
+### Bug Fixes
+
+* 移除部分测试数据 ([f83885a](https://github.com/have-not-BUG/js-utils/commit/f83885ac32e1d01be80079b76bf2b829db8149d5))
+
 ## [2.5.0](https://github.com/have-not-BUG/js-utils/compare/v2.4.1...v2.5.0) (2022-08-30)
 
 
